@@ -14,7 +14,6 @@ import static org.lwjgl.opengl.GL11.*;
 /**
  *
  * @author Phil
- * test
  */
 public class Main {
     
