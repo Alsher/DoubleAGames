@@ -13,11 +13,11 @@ import static org.lwjgl.opengl.GL11.*;
 
 public class Draw {
     
-    public static void rect(float x, float y, float width, float height)
+    public static void drawRect(float x, float y, float width, float height)
     {
-        rect(x, y, width, height);
+        drawRect(x, y, width, height, 0);
     }
-    public static void rect(float x, float y, float width, float height, float rot)
+    public static void drawRect(float x, float y, float width, float height, float rot)
     {
         glPushMatrix();
         {
@@ -36,4 +36,5 @@ public class Draw {
         }
         glPopMatrix();
     }
+    
 }

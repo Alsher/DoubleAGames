@@ -16,7 +16,7 @@ public abstract class GameObject
     abstract void update();
     public void render()
     {
-        Draw.rect(x, y, sx, sy);
+        Draw.drawRect(x, y, sx, sy);
     }
     
     
@@ -43,6 +43,6 @@ public abstract class GameObject
     
     public float getCenterY()
     {
-        return y + (sy/2);
+        return y + (sy/2); //create center of GameObject
     }
 }
