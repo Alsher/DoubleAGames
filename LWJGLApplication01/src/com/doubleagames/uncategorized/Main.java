@@ -16,6 +16,7 @@ import static org.lwjgl.opengl.GL11.*;
  *
  * @author Phil
  * test
+ * second text madafucka
  */
 public class Main {
     
