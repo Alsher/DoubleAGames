@@ -36,7 +36,7 @@ public class GOEnemy extends GameObject{
         if(Physics.checkCollisions(this, ball))
             ball.reverseX(getCenterY());
         
-        float speed = (ball.getCenterY() - getCenterY() ) * DAMPING;
+        float speed = (ball.getCenterY() - getCenterY() * DAMPING );
         
         if(speed > MAX_SPEEDY)
             speed = MAX_SPEEDY;
