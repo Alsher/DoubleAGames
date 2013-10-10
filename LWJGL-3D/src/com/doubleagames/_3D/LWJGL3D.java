@@ -19,7 +19,7 @@ import org.newdawn.slick.opengl.TextureLoader;
 
 /**
  *
- * @author Phil
+ * @author Philipp Friese
  */
 public class LWJGL3D {
 
