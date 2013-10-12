@@ -16,6 +16,7 @@ import org.lwjgl.input.Keyboard;
 public class Player extends GameObject {
     
     public static final int SIZE = 32;
+    public static final double LEVEL_CONST = 25 * Math.pow(3, (3.0/2.0));
     
     private int health;
     private float xp;
@@ -24,7 +25,7 @@ public class Player extends GameObject {
     {
         init(x, y, 0.1f, 1f, 0.25f, SIZE, SIZE);
         health = 10;
-        xp = 150;
+        xp = 0;
     }
     
     @Override
@@ -58,7 +59,13 @@ public class Player extends GameObject {
     
     public int getLevel()
     {
-        return (int)(xp / 50) + 1;
+        double x = xp + 105;
+        
+        double a = Math.sqrt(243 * (x * x) + 4050 * x + 17500);
+        double c = (3 * x + 25)/25;
+        double d = Math.cbrt(a / LEVEL_CONST + c);
+        
+        return (int)(d - 1.0/d * 3) - 1;
     }
     
     public int getMaxHealth()
