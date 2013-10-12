@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.doubeagamesdev.game;
+package com.doubleagamesdev.game;
 
 import com.doubleagamesdev.engine.GameObject;
 import com.doubleagamesdev.game.gameobject.Player;

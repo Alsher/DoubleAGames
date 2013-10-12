@@ -4,7 +4,7 @@
  */
 package com.doubleagamesdev.engine;
 
-import com.doubeagamesdev.game.Game;
+import com.doubleagamesdev.game.Game;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.lwjgl.LWJGLException;
