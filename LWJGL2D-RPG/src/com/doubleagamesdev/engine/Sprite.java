@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package doubeagames._2D.RPG;
+package com.doubleagamesdev.engine;
 
 
 import static org.lwjgl.opengl.GL11.*;
@@ -15,7 +15,7 @@ public class Sprite {
     private float r, g, b; // red/green/blue color
     private float sx, sy;
     
-    public void Sprite(float r, float g, float b, float sx, float sy)
+    public Sprite(float r, float g, float b, float sx, float sy)
     {
         this.r = r;
         this.g = g;
@@ -37,5 +37,35 @@ public class Sprite {
         }
         glEnd();
     }
+    
+    
+    /**
+     * @return the sx
+     */
+    public float getSX() {
+        return sx;
+    }
+
+    /**
+     * @param sx the sx to set
+     */
+    public void setSX(float sx) {
+        this.sx = sx;
+    }
+
+    /**
+     * @return the sy
+     */
+    public float getSY() {
+        return sy;
+    }
+
+    /**
+     * @param sy the sy to set
+     */
+    public void setSY(float sy) {
+        this.sy = sy;
+    }
+    
     
 }

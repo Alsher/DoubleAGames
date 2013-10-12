@@ -2,8 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.doubleagames.uncategorized;
+package com.doubleagamesdev.engine;
 
+import doubeagamesdev._2D.RPG.Game;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.lwjgl.LWJGLException;
@@ -14,25 +15,35 @@ import static org.lwjgl.opengl.GL11.*;
 
 /**
  *
- * @author Philipp Friese
- * test
- * second text madafucka
+ * @author Phil
  */
 public class Main {
     
-    private static Game game;
-   
+    public static Game game;
+    
     public static void main(String[] args)
     {
-        //Initialize program
         initDisplay();
         initGL();
-        
         initGame();
         
+        
         gameLoop();
-        cleanUp();        
-    } 
+        
+        cleanUp();
+    }
+        
+    private static void initGL()
+    {
+        glMatrixMode(GL_PROJECTION);
+        glLoadIdentity();
+        glOrtho(0, Display.getWidth(), 0, Display.getHeight(), -1, 1);
+        glMatrixMode(GL_MODELVIEW);
+        
+        glDisable(GL_DEPTH_TEST);
+        
+        glClearColor(0, 0, 0, 0);
+    }
     
     private static void initGame()
     {
@@ -43,68 +54,55 @@ public class Main {
     {
         game.getInput();
     }
-    
+
     private static void update()
-    {
-        game.update();
-    }
+     {
+         game.update();
+     }
     
     private static void render()
-    {
-        
-        glClear(GL_COLOR_BUFFER_BIT);
-        glLoadIdentity(); //clear matrix again for glTranslatef(..);
-
-        game.render();
-
-        Display.update();
-        Display.sync(60);
-    }
-    
+     {
+         glClear(GL_COLOR_BUFFER_BIT);
+         glLoadIdentity();
+         
+         game.render();
+         
+         Display.update();
+         Display.sync(60);
+         
+         
+     }
+     
+    private static void cleanUp()
+     {
+         Display.destroy();
+         Keyboard.destroy();
+     }
+     
     private static void gameLoop()
     {
-       while(!Display.isCloseRequested()) 
-        {
+        while(!Display.isCloseRequested())
+        {       
             getInput();
             update();
             render();
-
-        }     
+        }
     }
-    
-    
     
    
-    private static void initGL()
-    {
-       glMatrixMode(GL_PROJECTION);
-       glLoadIdentity(); // clear matrix
-       glOrtho(0, Display.getWidth(), 0, Display.getHeight(), -1, 1); //display 2D with getWidth() / getHeight() for getting screen size
-       glMatrixMode(GL_MODELVIEW);
-       
-       glClearColor(0, 0, 0, 1);
-       
-       glDisable(GL_DEPTH_TEST);
-    }
-    
-    private static void cleanUp()
-    {
-        Display.destroy();
-        Keyboard.destroy();
-    }
     
     private static void initDisplay()
     {
         try {
             Display.setDisplayMode(new DisplayMode(800,600));
             Display.create();
-            Display.setVSyncEnabled(true);
             Keyboard.create();
-            
-        } catch (LWJGLException ex) {            
+            Display.setVSyncEnabled(true);
+        } catch (LWJGLException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
-            
+    
     
 }
