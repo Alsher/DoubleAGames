@@ -6,7 +6,8 @@
 package com.doubleagamesdev.game.gameobject;
 
 import com.doubleagamesdev.engine.GameObject;
-import com.doubleagamesdev.engine.Sprite;
+import com.doubleagamesdev.game.item.Cube;
+import com.doubleagamesdev.game.item.Item;
 import org.lwjgl.input.Keyboard;
 
 /**
@@ -23,7 +24,7 @@ public class Player extends GameObject {
         
     public Player(float x, float y)
     {
-        init(x, y, 0.1f, 1f, 0.25f, SIZE, SIZE);
+        init(x, y, 0.1f, 1f, 0.25f, SIZE, SIZE, 0);
         health = 10;
         xp = 0;
     }
@@ -31,7 +32,7 @@ public class Player extends GameObject {
     @Override
     public void update()
     {
-        System.out.println("Stats: Speed: " + getSpeed() + " Level: " + getLevel() + " MaxHP: " + getMaxHealth() + " HP: " + getCurrentHealth() + " Strength: " + getStrength() + " magic: " + getMagic());;
+        //System.out.println("Stats: Speed: " + getSpeed() + " Level: " + getLevel() + " MaxHP: " + getMaxHealth() + " HP: " + getCurrentHealth() + " Strength: " + getStrength() + " magic: " + getMagic());;
     }
     
     public void getInput()
@@ -60,6 +61,7 @@ public class Player extends GameObject {
     public int getLevel()
     {
         double x = xp + 105;
+        
         
         double a = Math.sqrt(243 * (x * x) + 4050 * x + 17500);
         double c = (3 * x + 25)/25;
@@ -95,6 +97,12 @@ public class Player extends GameObject {
     public void addXp(float amt)
     {
         xp += amt;
+    }
+    
+    public void addItem(Item item)
+    {
+        System.out.println("You picked up an item");
+    
     }
 }
 
