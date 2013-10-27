@@ -5,6 +5,7 @@
 package com.doubleagamesdev.game;
 
 import com.doubleagamesdev.engine.GameObject;
+import com.doubleagamesdev.game.gameobject.CookieMonster;
 import com.doubleagamesdev.game.gameobject.Player;
 import com.doubleagamesdev.game.item.Cube;
 import java.util.ArrayList;
@@ -29,6 +30,7 @@ public class Game
         
         objects.add(player);
         objects.add(new Cube(32, 32, player));
+        objects.add(new CookieMonster(300, 500, 1));
         
     }
     
@@ -58,6 +60,19 @@ public class Game
     {
         for(GameObject go : objects)
             go.render();
+    }
+    
+    public ArrayList<GameObject> sphereCollide(float x, float y, float radius)
+    {
+        ArrayList<GameObject> res = new ArrayList<>();
+        
+        for(GameObject go : objects)
+        {
+            if(Util.dist(go.getX(), go.getY(), x, y) < radius)
+                res.add(go);
+        }
+        
+        return res;
     }
 
 }

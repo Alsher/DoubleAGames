@@ -5,6 +5,7 @@
 package com.doubleagamesdev.engine;
 
 import com.doubleagamesdev.game.Game;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.lwjgl.LWJGLException;
@@ -31,6 +32,11 @@ public class Main {
         gameLoop();
         
         cleanUp();
+    }
+    
+    public static ArrayList<GameObject> sphereCollide(float x, float y, float radius)
+    {
+        return game.sphereCollide(x, y, radius);
     }
         
     private static void initGL()
