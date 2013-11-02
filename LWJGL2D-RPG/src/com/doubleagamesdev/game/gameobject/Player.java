@@ -5,7 +5,7 @@
 
 package com.doubleagamesdev.game.gameobject;
 
-import com.doubleagamesdev.engine.GameObject;
+import com.doubleagamesdev.game.Time;
 import com.doubleagamesdev.game.item.Item;
 import org.lwjgl.input.Keyboard;
 
@@ -13,10 +13,9 @@ import org.lwjgl.input.Keyboard;
  *
  * @author Philipp Friese
  */
-public class Player extends GameObject {
+public class Player extends StatObject {
     
     public static final int SIZE = 32;
-    private Stats stats;
     private Inventory inventory;
         
     public Player(float x, float y)
@@ -46,45 +45,15 @@ public class Player extends GameObject {
     
     private void move(float magX, float magY)
     {
-        x += getSpeed() * magX;
-        y += getSpeed() * magY;
+        x += getSpeed() * magX * Time.getDelta();
+        y += getSpeed() * magY * Time.getDelta();
     }
     
     public void addItem(Item item)
     {
         inventory.add(item);
     }
-        
-    public float getSpeed()
-    {
-        return stats.getSpeed();
-    }
-    
-    public int getLevel()
-    {
-        return stats.getLevel();
-    }
-    
-    public int getMaxHealth()
-    {
-        return stats.getMaxHealth();
-    }
-    
-    public int getCurrentHealth()
-    {
-        return stats.getCurrentHealth();
-    }
-    
-    public float getStrength()
-    {
-        return stats.getStrength();
-    }
-    
-    public float getMagic()
-    {
-        return stats.getMagic();
-    }
-    
+
     public void addXp(float amt)
     {
         stats.addXp(amt);

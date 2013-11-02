@@ -5,6 +5,7 @@
 package com.doubleagamesdev.engine;
 
 import com.doubleagamesdev.game.Game;
+import com.doubleagamesdev.game.Time;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -74,9 +75,7 @@ public class Main {
          game.render();
          
          Display.update();
-         Display.sync(60);
-         
-         
+         Display.sync(60);        
      }
      
     private static void cleanUp()
@@ -87,11 +86,15 @@ public class Main {
      
     private static void gameLoop()
     {
+        Time.init();
+        
         while(!Display.isCloseRequested())
         {       
+            Time.update();
             getInput();
             update();
             render();
+            
         }
     }
     

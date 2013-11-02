@@ -85,5 +85,10 @@ public class Stats {
     {
         xp += amt;
     }
+    
+    public void damage(int amt)
+    {
+        health -= amt;
+    }
 }
 

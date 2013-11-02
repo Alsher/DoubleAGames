@@ -24,7 +24,7 @@ public class Util {
         double x = x2 - x1; //double for precision
         double y = y2 - y1;
         
-        return (float)Math.sqrt((x * x) - (y * y));
+        return (float)Math.sqrt((x * x) + (y * y));
     }
 
 }
