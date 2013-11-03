@@ -7,8 +7,8 @@
 package com.doubleagamesdev.game.gameobject;
 
 import com.doubleagamesdev.engine.GameObject;
-import static com.doubleagamesdev.engine.GameObject.PLAYER_ID;
 import com.doubleagamesdev.engine.Main;
+import com.doubleagamesdev.engine.Sprite;
 import com.doubleagamesdev.game.Delay;
 import com.doubleagamesdev.game.Time;
 import com.doubleagamesdev.game.Util;
@@ -39,6 +39,7 @@ public class Enemy extends StatObject {
         attackDelay.end();
         sightRange = 128;
         
+        
     }
     
     @Override
@@ -66,7 +67,7 @@ public class Enemy extends StatObject {
     protected void Attack()
     {
         getTarget().damage(getAttackDamage());
-        //System.out.println("targets health: " + getTarget().getCurrentHealth() + "/" + getTarget().getMaxHealth());
+        System.out.println("We are hit! : " + getTarget().getCurrentHealth() + " / " + getTarget().getMaxHealth());
         restartAttackDelay();
     }
     
@@ -151,6 +152,16 @@ public class Enemy extends StatObject {
     public void setSightRange(float dist)
     {
         sightRange = dist;
+    }
+    
+    @Override
+    protected void init(float x, float y, float r, float g, float b, float sx, float sy, int type)
+    {
+        this.x = x;
+        this.y = y;
+        this.type = ENEMY_ID;
+        this.spr = new Sprite(r, g, b, sx, sy);
+        
     }
 }
 

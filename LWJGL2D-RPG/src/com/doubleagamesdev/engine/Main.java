@@ -40,6 +40,11 @@ public class Main {
         return game.sphereCollide(x, y, radius);
     }
         
+    public static ArrayList<GameObject> rectangleCollide(float x1, float y1, float x2, float y2)
+    {
+        return game.rectangleCollide(x1, y1, x2, y2);
+    }
+    
     private static void initGL()
     {
         glMatrixMode(GL_PROJECTION);

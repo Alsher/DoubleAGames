@@ -19,7 +19,7 @@ public class CookieMonster extends Enemy {
     {
         super(level);
         init(x, y, 0.2f, 0.2f, 1f, SIZE, SIZE, 0);
-        setAttackDelay(200);
+        setAttackDelay(500); //override attack delay
     }
 }
 

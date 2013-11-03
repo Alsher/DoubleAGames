@@ -5,9 +5,11 @@
 package com.doubleagamesdev.game;
 
 import com.doubleagamesdev.engine.GameObject;
+import com.doubleagamesdev.engine.Physics;
 import com.doubleagamesdev.game.gameobject.CookieMonster;
 import com.doubleagamesdev.game.gameobject.Player;
 import com.doubleagamesdev.game.item.Cube;
+import java.awt.Rectangle;
 import java.util.ArrayList;
 import org.lwjgl.opengl.Display;
 
@@ -70,6 +72,26 @@ public class Game
         {
             if(Util.dist(go.getX(), go.getY(), x, y) < radius)
                 res.add(go);
+        }
+        
+        return res;
+    }
+    
+    public ArrayList<GameObject> rectangleCollide(float x1, float y1, float x2, float y2)
+    {
+        ArrayList<GameObject> res = new ArrayList<>();
+        
+        float sx = x2 - x1;
+        float sy = y2 - y1;
+        
+        Rectangle collider = new Rectangle((int)x1, (int)y1, (int)sx, (int)sy);
+        
+        for(GameObject go : objects)
+        {
+            if(Physics.checkCollision(collider, go) != null)
+            {
+                res.add(go);
+            }
         }
         
         return res;
