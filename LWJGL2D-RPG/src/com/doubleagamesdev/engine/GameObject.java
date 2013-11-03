@@ -30,7 +30,7 @@ public abstract class GameObject {
    
    public void render()
    {
-       glPushMatrix();
+       glPushMatrix(); //create own matrix
        {
             glTranslatef(x, y, 0);
             spr.render(); 
