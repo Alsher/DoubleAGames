@@ -4,29 +4,32 @@
  */
 package com.doubleagamesdev.uncategorized;
 
+import static com.doubleagamesdev.uncategorized.GOPlayer.SIZEX;
+import static com.doubleagamesdev.uncategorized.GOPlayer.SIZEY;
+import static com.doubleagamesdev.uncategorized.GOPlayer.SPEED;
+import org.lwjgl.opengl.Display;
+
 /**
  *
- * @author Phil
+ * @author Malik
  */
-public class GOEnemy extends GameObject{
-    
+public class GOPlayer2 extends GameObject
+{
     public static final int SIZEX = 16;
     public static final int SIZEY = SIZEX * 7;
-    public static final float MAX_SPEEDY = 4f;
-    public static final float DAMPING = 0.05f;
+    public static final float SPEED = 4f;
     
-     GOBall ball;
-     GOWall wall1;
-     GOWall wall2;
-             
-    public GOEnemy(float x, float y, GOWall wall1, GOWall wall2, GOBall ball)
+    private GOBall ball;
+    private GOWall wall1;
+    private GOWall wall2;
+    public GOPlayer2(float x, float y, GOWall wall, GOWall wall2, GOBall ball)
     {
         this.x = x;
         this.y = y;
         this.sx = SIZEX;
         this.sy = SIZEY;
         this.ball = ball;
-        this.wall1 = wall1;
+        this.wall1 = wall;
         this.wall2 = wall2;
     }
     
@@ -35,20 +38,15 @@ public class GOEnemy extends GameObject{
     {
         if(Physics.checkCollisions(this, ball))
             ball.reverseX(getCenterY());
-        
-        float speed = (ball.getCenterY() - getCenterY()) * DAMPING;
-        
-        if(speed > MAX_SPEEDY)
-            speed = MAX_SPEEDY;
-        if(speed < -MAX_SPEEDY)
-            speed = -MAX_SPEEDY;
-        
-        
-        y += speed;
-
         if(Physics.checkCollisions(this, wall1))
             this.y = 16;
         if(Physics.checkCollisions(this, wall2))
-            this.y = 472; 
+            this.y = 472;   
+    }
+    
+    public void move(float mag)
+    {
+        y += SPEED * mag;
+        
     }
 }
