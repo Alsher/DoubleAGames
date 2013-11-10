@@ -1,0 +1,31 @@
+enemies
+Jews: Ninja-stars of David
+Christians: War-crosses
+	Hero: Pastors 'full of love'
+Moslims: ?
+	Hero: Self-blowup
+Buddist: Monks on Fire
+Hindu: cows
+
+
+
+
+
+Weapons
+Math jab
+Geo-Gun
+	cube 		a*a*a
+	cuboid 		l*w*h
+	pyramid 	a*a*h/3
+	cylinder 	pi*r*r*h
+	cone		pi*r*r*h/3
+	sphere		pi*r*r*r*4/3
+?
+
+
+
+
+eastereggs (little statures to be found ingame)
+	
+	train with crosses (what u don't get it?)
+	a dophin (ohh, its gonne be usefull against all that nasty jews)
