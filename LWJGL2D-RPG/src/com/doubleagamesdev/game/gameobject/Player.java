@@ -140,8 +140,8 @@ public class Player extends StatObject {
         if(magX == 1 && magY == LEFT)
             facingDirection = RIGHT;
         
-        x += getSpeed() * magX * Time.getDelta();
-        y += getSpeed() * magY * Time.getDelta();
+        x += 4f * magX * Time.getDelta(); //TODO: Add speed based scaling
+        y += 4f * magY * Time.getDelta();
     }
     
     public void addItem(Item item)

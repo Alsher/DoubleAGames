@@ -34,7 +34,7 @@ public class Equipment {
             if(!deEquip(index))
                 return false;
         }
-        
+        inv.remove(item);
         items[index] = item;
         return true;
     }
