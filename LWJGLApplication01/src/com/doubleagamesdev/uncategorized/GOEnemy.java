@@ -13,7 +13,7 @@ public class GOEnemy extends GameObject{
     public static final int SIZEX = 16;
     public static final int SIZEY = SIZEX * 7;
     public static final float MAX_SPEEDY = 4f;
-    public static final float DAMPING = 0.05f;
+    public static final float DAMPING = 0.5f;
     
      GOBall ball;
      GOWall wall1;

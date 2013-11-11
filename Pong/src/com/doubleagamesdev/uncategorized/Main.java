@@ -14,7 +14,7 @@ import static org.lwjgl.opengl.GL11.*;
 
 /**
  *
- * @author Philipp Friese
+ * @author Malik
  * test
  * second text madafucka
  */
