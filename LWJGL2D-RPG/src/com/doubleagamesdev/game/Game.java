@@ -19,10 +19,12 @@ import org.lwjgl.opengl.Display;
  */
 public class Game 
 {
+    public static Game game;
+    
     private ArrayList<GameObject> objects;
     private ArrayList<GameObject> remove;
     private Player player; 
-    
+
     public Game()
     {
         objects = new ArrayList<>();
@@ -31,7 +33,7 @@ public class Game
         player = new Player(Display.getWidth() / 2 - Player.SIZE / 2, Display.getHeight() / 2 - Player.SIZE / 2);
         
         objects.add(player);
-        objects.add(new Cube(32, 32, player));
+        objects.add(new Cube(32, 32));
         objects.add(new CookieMonster(300, 500, 1));
         
     }
@@ -64,11 +66,16 @@ public class Game
             go.render();
     }
     
-    public ArrayList<GameObject> sphereCollide(float x, float y, float radius)
+    public ArrayList<GameObject> getObjects()
+    {
+        return objects;
+    }
+    
+    public static ArrayList<GameObject> sphereCollide(float x, float y, float radius)
     {
         ArrayList<GameObject> res = new ArrayList<>();
         
-        for(GameObject go : objects)
+        for(GameObject go : game.getObjects())
         {
             if(Util.dist(go.getX(), go.getY(), x, y) < radius)
                 res.add(go);
@@ -77,7 +84,7 @@ public class Game
         return res;
     }
     
-    public ArrayList<GameObject> rectangleCollide(float x1, float y1, float x2, float y2)
+    public static ArrayList<GameObject> rectangleCollide(float x1, float y1, float x2, float y2)
     {
         ArrayList<GameObject> res = new ArrayList<>();
         
@@ -86,7 +93,7 @@ public class Game
         
         Rectangle collider = new Rectangle((int)x1, (int)y1, (int)sx, (int)sy);
         
-        for(GameObject go : objects)
+        for(GameObject go : game.getObjects())
         {
             if(Physics.checkCollision(collider, go) != null)
             {

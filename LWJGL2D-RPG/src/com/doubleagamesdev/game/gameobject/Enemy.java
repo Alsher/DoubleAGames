@@ -7,9 +7,9 @@
 package com.doubleagamesdev.game.gameobject;
 
 import com.doubleagamesdev.engine.GameObject;
-import com.doubleagamesdev.engine.Main;
 import com.doubleagamesdev.engine.Sprite;
 import com.doubleagamesdev.game.Delay;
+import com.doubleagamesdev.game.Game;
 import com.doubleagamesdev.game.Time;
 import com.doubleagamesdev.game.Util;
 import java.util.ArrayList;
@@ -36,7 +36,7 @@ public class Enemy extends StatObject {
         attackDelay = new Delay(500);
         attackRange = 48f;
         attackDamage = 1;
-        attackDelay.end();
+        attackDelay.terminate();
         sightRange = 128;
         
         
@@ -51,7 +51,7 @@ public class Enemy extends StatObject {
         {
             if(Util.LineOfSight(this, target) && Util.dist(x, y, getTarget().getX(), getTarget().getY()) <= attackRange)
             {
-                if(attackDelay.over())
+                if(attackDelay.isOver())
                     Attack();
             }
                 
@@ -68,7 +68,7 @@ public class Enemy extends StatObject {
     {
         getTarget().damage(getAttackDamage());
         System.out.println("We are hit! : " + getTarget().getCurrentHealth() + " / " + getTarget().getMaxHealth());
-        restartAttackDelay();
+        attackDelay.restart();
     }
     
     protected void Death()
@@ -79,7 +79,7 @@ public class Enemy extends StatObject {
     
     protected void Look()
     {
-        ArrayList<GameObject> objects = Main.sphereCollide(x, y, sightRange);
+        ArrayList<GameObject> objects = Game.sphereCollide(x, y, sightRange);
         
         for(GameObject go : objects)
             if(go.getType() == PLAYER_ID)
@@ -136,19 +136,14 @@ public class Enemy extends StatObject {
     public void setAttackDelay(int time)
     {
         attackDelay = new Delay(time);
-        attackDelay.end();
+        attackDelay.terminate();
     }
 
     public void setAttackDamage(int amt)
     {
         attackDamage = amt;
     }
-    
-    public void restartAttackDelay()
-    {
-        attackDelay.start();
-    }
-    
+
     public void setSightRange(float dist)
     {
         sightRange = dist;

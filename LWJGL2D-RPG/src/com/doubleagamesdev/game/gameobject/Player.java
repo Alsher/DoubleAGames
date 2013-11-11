@@ -6,8 +6,8 @@
 package com.doubleagamesdev.game.gameobject;
 
 import com.doubleagamesdev.engine.GameObject;
-import com.doubleagamesdev.engine.Main;
 import com.doubleagamesdev.game.Delay;
+import com.doubleagamesdev.game.Game;
 import com.doubleagamesdev.game.Time;
 import com.doubleagamesdev.game.Util;
 import com.doubleagamesdev.game.item.Item;
@@ -28,6 +28,7 @@ public class Player extends StatObject {
     public static final int RIGHT = 3;
     
     private Inventory inventory;
+    private Equipment equipment;
     
     private int attackRange;
     private int facingDirection;
@@ -37,19 +38,31 @@ public class Player extends StatObject {
     public Player(float x, float y)
     {
         init(x, y, 0.1f, 1f, 0.25f, SIZE, SIZE, PLAYER_ID);
-        stats = new Stats(0, true);  //starting experience, levelable
+        stats = new Stats(0, true);    //starting experience, levelable
         inventory = new Inventory(20); //inventory with 20 "slots"
+        equipment = new Equipment(inventory);
         attackDelay = new Delay(500);
-        attackRange = 48;
+        attackRange = 49;
         attackDamage = 1;
         facingDirection = 0;
-        attackDelay.end();
+        attackDelay.terminate();
     }
     
     @Override
     public void update()
     {
         //System.out.println("Stats: Speed: " + getSpeed() + " Level: " + getLevel() + " MaxHP: " + getMaxHealth() + " HP: " + getCurrentHealth() + " Strength: " + getStrength() + " magic: " + getMagic());;
+        ArrayList<GameObject> objects = Game.rectangleCollide(x, y, x + SIZE, y + SIZE);
+        
+        for(GameObject go : objects)
+        {
+            if(go.getType() == GameObject.ITEM_ID)
+            {
+                System.out.println("You just picked up an item  " + ((Item)go).getName());
+                go.remove();
+                addItem((Item)go);
+            }    
+        }
     }
     
     public void getInput()
@@ -63,7 +76,7 @@ public class Player extends StatObject {
         if(Keyboard.isKeyDown(Keyboard.KEY_D))
             move(1, 0);
         
-        if(Keyboard.isKeyDown(Keyboard.KEY_SPACE) && attackDelay.over())
+        if(Keyboard.isKeyDown(Keyboard.KEY_SPACE) && attackDelay.isOver())
             attack();
     }
     
@@ -75,13 +88,13 @@ public class Player extends StatObject {
         
         /** find objects in attack range **/
         if(facingDirection == FORWARD)
-            objects = Main.rectangleCollide(x, y, x + SIZE, y + attackRange);
+            objects = Game.rectangleCollide(x, y, x + SIZE, y + attackRange);
         else if(facingDirection == BACKWARD)
-            objects = Main.rectangleCollide(x, y, x + SIZE, y - attackRange);
+            objects = Game.rectangleCollide(x, y - attackRange + SIZE, x + SIZE, y);
         else if(facingDirection == LEFT)
-            objects = Main.rectangleCollide(x, y, x - attackRange, y + SIZE);
+            objects = Game.rectangleCollide(x - attackRange + SIZE, y, x, y + SIZE);
         else if(facingDirection == RIGHT)
-            objects = Main.rectangleCollide(x, y, x + attackRange, y + SIZE);
+            objects = Game.rectangleCollide(x, y, x + attackRange, y + SIZE);
         
         /** Find which objects are enemies **/
         ArrayList<Enemy> enemies = new ArrayList<>();
@@ -91,6 +104,7 @@ public class Player extends StatObject {
             if(go.getType() == ENEMY_ID)
                 enemies.add((Enemy)go);
         }
+        
         /** Find closest enemy, if one exists **/
         if(enemies.size() > 0)
         {
@@ -110,10 +124,9 @@ public class Player extends StatObject {
         }
         else
             System.out.println(" : No target");
-            
-           
+
         
-        attackDelay.start();
+        attackDelay.restart();
     }
     
     private void move(float magX, float magY)

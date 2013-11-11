@@ -6,7 +6,6 @@ package com.doubleagamesdev.engine;
 
 import com.doubleagamesdev.game.Game;
 import com.doubleagamesdev.game.Time;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.lwjgl.LWJGLException;
@@ -21,8 +20,6 @@ import static org.lwjgl.opengl.GL11.*;
  */
 public class Main {
     
-    public static Game game;
-    
     public static void main(String[] args)
     {
         initDisplay();
@@ -34,17 +31,7 @@ public class Main {
         
         cleanUp();
     }
-    
-    public static ArrayList<GameObject> sphereCollide(float x, float y, float radius)
-    {
-        return game.sphereCollide(x, y, radius);
-    }
-        
-    public static ArrayList<GameObject> rectangleCollide(float x1, float y1, float x2, float y2)
-    {
-        return game.rectangleCollide(x1, y1, x2, y2);
-    }
-    
+
     private static void initGL()
     {
         glMatrixMode(GL_PROJECTION);
@@ -59,17 +46,17 @@ public class Main {
     
     private static void initGame()
     {
-        game = new Game();
+        Game.game = new Game();
     }
     
     private static void getInput()
     {
-        game.getInput();
+        Game.game.getInput();
     }
 
     private static void update()
      {
-         game.update();
+         Game.game.update();
      }
     
     private static void render()
@@ -77,7 +64,7 @@ public class Main {
          glClear(GL_COLOR_BUFFER_BIT);
          glLoadIdentity();
          
-         game.render();
+         Game.game.render();
          
          Display.update();
          Display.sync(60);        
