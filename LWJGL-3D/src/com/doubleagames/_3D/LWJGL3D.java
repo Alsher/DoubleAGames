@@ -45,8 +45,8 @@ public class LWJGL3D {
         Logger.getLogger(LWJGL3D.class.getName()).log(Level.SEVERE, null, ex);
     }
 
-return null;
-}
+    return null;
+    }
     
     public static void gameLoop()
     {
