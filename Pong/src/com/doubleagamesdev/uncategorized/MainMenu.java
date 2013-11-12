@@ -9,7 +9,6 @@ package com.doubleagamesdev.uncategorized;
 import com.doubleagamesdev.uncategorized.Main.GameState;
 import org.lwjgl.opengl.Display;
 import org.newdawn.slick.opengl.Texture;
-import com.doubleagamesdev.uncategorized.Game;
 
 /**
  *
