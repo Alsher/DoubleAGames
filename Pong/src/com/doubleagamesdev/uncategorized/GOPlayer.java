@@ -4,7 +4,6 @@
  */
 package com.doubleagamesdev.uncategorized;
 
-import org.lwjgl.opengl.Display;
 
 /**
  *
@@ -38,7 +37,7 @@ public class GOPlayer extends GameObject
         if(Physics.checkCollisions(this, wall1))
             this.y = 16;
         if(Physics.checkCollisions(this, wall2))
-            this.y = 472;   
+            this.y = 592;   
     }
     
     public void move(float mag)

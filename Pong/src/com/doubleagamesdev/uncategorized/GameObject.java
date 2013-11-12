@@ -21,6 +21,7 @@ public abstract class GameObject
     
     
     /** getter for floats **/
+    
     public float getX()
     {
       return x;  

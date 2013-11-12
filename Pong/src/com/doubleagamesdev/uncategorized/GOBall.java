@@ -11,8 +11,8 @@ package com.doubleagamesdev.uncategorized;
 public class GOBall extends GameObject{
     
     public static final int SIZE = 16;
-    public static final float MAX_SPEEDX = 4f;
-    public static final float MAX_SPEEDY = 8f;
+    public static final float MAX_SPEEDX = 6f;
+    public static final float MAX_SPEEDY = 10f;
     public static final float DAMPING = 0.05f;
     
     public float velX, velY;
