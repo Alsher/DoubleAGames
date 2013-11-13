@@ -19,12 +19,7 @@ public class RPGRandom extends Random {
     
     public RPGRandom()
     {
-        state = new long[16];
-        index = 0;
-        
-        Random rand = new Random();  
-        
-        seed(rand.nextInt());
+        this((int) System.currentTimeMillis());
     }
     
     public RPGRandom(int seed)
