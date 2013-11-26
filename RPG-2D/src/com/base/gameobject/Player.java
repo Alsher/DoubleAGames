@@ -5,6 +5,7 @@
 package com.base.gameobject;
 
 import com.base.engine.GameObject;
+import com.base.gameobject.items.Item;
 import org.lwjgl.input.Keyboard;
 
 /**
@@ -78,5 +79,8 @@ public class Player extends GameObject{
     
     public float getMagic(){
         return getLevel() * 4f;
+    }
+    public void addItem(Item item){
+        System.out.println("we just picked up an item");
     }
 }
