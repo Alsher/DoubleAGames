@@ -9,8 +9,6 @@ Hindu: cows
 
 
 
-
-
 Weapons
 Math jab
 Geo-Gun
@@ -20,10 +18,14 @@ Geo-Gun
 	cylinder 	pi*r*r*h
 	cone		pi*r*r*h/3
 	sphere		pi*r*r*r*4/3
-?
 
+granade launcher
+	given is a 45° angle to have the highest range
+	x(t)=300.000.000*t
 
-
+	v(x)=(x/g)^(1/2)
+	t'(x)=s/v
+	
 
 eastereggs (little statures to be found ingame)
 	
