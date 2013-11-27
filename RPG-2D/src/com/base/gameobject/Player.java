@@ -15,15 +15,10 @@ import org.lwjgl.input.Keyboard;
 public class Player extends GameObject{
     
     public static final float SIZE = 32;
-    public static final double LEVEL_KONST = 25 * Math.pow(3,3/2);
+    private Stats stats;
 
-    private int health;
-    private float xp;
-    
     public Player(float x, float y){
         init(x,y,0.1f,1f,0.3f,SIZE,SIZE,0);
-        health = 10;
-        xp = 0;
     }
     @Override
     public void update()
@@ -45,42 +40,33 @@ public class Player extends GameObject{
         x += getSpeed() + magX;
         y += getSpeed() + magY;
     }
-    
+    public void addItem(Item item){
+        System.out.println("we just picked up an item");
+    }
     public float getSpeed(){
-        return 4f;
+        return stats.getSpeed();
     }
     
     public int getLevel(){
-        
-        double a = Math.sqrt(243 * xp * xp + 4050 * xp + 17500);
-        double c = (3 * xp +25)/25;
-        double d = Math.sqrt(a / LEVEL_KONST + c);
-        
-        return (int)(d * 2 / 3);
+        return stats.getLevel();
     }
-    public void addXP(float amt){
-        xp += amt;
-    }
+    
     public int getMaxHealth(){
-        return (getLevel() * 10);
+        return stats.getMaxHealth();
     }
     
     public int getCurrentHealth(){
-        int max = getMaxHealth();
-        if(health < max)
-            health = max;
-        
-        return health;
+        return stats.getCurrentHealth();
     }
     
     public float getStrength(){
-        return getLevel() * 4f;
+        return stats.getStrength();
     }
     
     public float getMagic(){
-        return getLevel() * 4f;
+        return stats.getMagic();
     }
-    public void addItem(Item item){
-        System.out.println("we just picked up an item");
+    public void addXP(float amt){
+        stats.addXP(amt);
     }
 }

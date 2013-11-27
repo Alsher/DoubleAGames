@@ -15,7 +15,7 @@ public abstract class GameObject {
     protected float y;
     protected int type; 
     protected Sprite spr;
-    protected boolean remove = false;
+    protected boolean[] flags = new boolean[1];
     
     public void update(){
         
@@ -46,9 +46,12 @@ public abstract class GameObject {
         return type;
     }
     public boolean getRemove(){
-        return remove;
-
+        return flags[0];
     }
+    public void remove(){
+        flags[0] = true;
+    } 
+    
     protected void init(float x,float y,float r,float g,float b,float sx,float sy, int type){
         this.x = x;
         this.y = y;
