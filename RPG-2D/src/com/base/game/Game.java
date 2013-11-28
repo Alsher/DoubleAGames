@@ -5,6 +5,7 @@
 package com.base.game;
 
 import com.base.engine.GameObject;
+import com.base.gameobject.CookieMonster;
 import com.base.gameobject.Player;
 import com.base.gameobject.items.Cube;
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class Game {
         
         objects.add(player);
         objects.add(new Cube(32,32,player));
+        objects.add(new CookieMonster(300,500,1));
     }
     public void getInput(){
         player.getInput();
