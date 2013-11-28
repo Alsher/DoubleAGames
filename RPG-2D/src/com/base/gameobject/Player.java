@@ -20,7 +20,7 @@ public class Player extends GameObject{
 
     public Player(float x, float y){
         init(x,y,0.1f,1f,0.3f,SIZE,SIZE,0);
-        stats = new Stats(0);
+        stats = new Stats(0, true);
         inventory = new Inventory(20);
     }
     @Override
