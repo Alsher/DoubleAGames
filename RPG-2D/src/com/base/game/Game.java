@@ -35,7 +35,7 @@ public class Game {
     public void update(){
         
         for(GameObject go : objects)
-            if(go.getRemove())
+            if(!go.getRemove()) //yeah fuck the small things
                 go.update();
             else{
                 remove.add(go);
