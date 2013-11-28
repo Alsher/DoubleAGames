@@ -16,9 +16,12 @@ public class Player extends GameObject{
     
     public static final float SIZE = 32;
     private Stats stats;
+    private Inventory inventory;
 
     public Player(float x, float y){
         init(x,y,0.1f,1f,0.3f,SIZE,SIZE,0);
+        stats = new Stats(0);
+        inventory = new Inventory(20);
     }
     @Override
     public void update()
@@ -41,7 +44,7 @@ public class Player extends GameObject{
         y += getSpeed() + magY;
     }
     public void addItem(Item item){
-        System.out.println("we just picked up an item");
+        inventory.add(item);
     }
     public float getSpeed(){
         return stats.getSpeed();

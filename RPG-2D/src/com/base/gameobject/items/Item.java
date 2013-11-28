@@ -25,13 +25,17 @@ public class Item extends GameObject{
     public void pickUp(){
         System.out.println("You just picked up an " + name + "!");
         player.addItem(this);
-        remove = true;
+        remove();
     }
     
     @Override
     public void update(){
         if(Physiks.checkCollision(this, player))
             pickUp();
+    }
+    
+    public String getName(){
+        return name;
     }
     protected void init(float x,float y,float r,float g,float b,float sx,float sy, String name){
         this.x = x;
