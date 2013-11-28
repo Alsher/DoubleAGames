@@ -40,8 +40,8 @@ public class Player extends GameObject{
     }
     
     private void move(float magX,float magY){
-        x += getSpeed() + magX;
-        y += getSpeed() + magY;
+        x += getSpeed() * magX;
+        y += getSpeed() * magY;
     }
     public void addItem(Item item){
         inventory.add(item);
