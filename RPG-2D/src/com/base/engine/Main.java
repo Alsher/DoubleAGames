@@ -28,7 +28,9 @@ public class Main {
         gameLoop();
         cleanUp();
     }
-    
+    public static void GameObject[] SphereCollide(float x, float y, float radius){
+        return game.SphereCollide(x, y, radius);
+    }
     private static void initGame(){
         game = new Game();
     }

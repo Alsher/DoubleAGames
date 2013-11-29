@@ -49,5 +49,15 @@ public class Game {
         for(GameObject go : objects)
             go.render();
     }
+    public GameObject[] SphereCollide(float x, float y, float radius){
+        ArrayList<GameObject> res = new ArrayList<GameObject>();
+        
+        for(GameObject go : objects){
+            if(Util.Dist(go.getX(),go.getY(), x, y) < radius)
+                res.add(go);
+        }
+        
+        return (GameObject[])res.toArray();
+    }
     
 }

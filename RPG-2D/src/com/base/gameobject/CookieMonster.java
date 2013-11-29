@@ -4,6 +4,9 @@
  */
 package com.base.gameobject;
 
+import com.base.engine.GameObject;
+import com.base.engine.Main;
+
 /**
  *
  * @author Malik
@@ -16,6 +19,6 @@ public class CookieMonster extends Enermy{
         this.init(x, y, 0.2f, 0.2f, 1.0f, SIZE, SIZE, 0);
     }
     protected void Look(){
-        
+        GameObject[] objects = Main.sphereCollide(x,y,radius);
     }
 }
