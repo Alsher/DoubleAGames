@@ -24,15 +24,16 @@ public class Main {
    
     public static void main(String[] args)
     {
-        //Initialize program
+        
         initDisplay();
         initGL();
-        
+        System.out.println(glGetString(GL_VERSION));
         initGame();
         
         gameLoop();
         cleanUp();        
-    } 
+    }
+    
     
     private static void initGame()
     {
