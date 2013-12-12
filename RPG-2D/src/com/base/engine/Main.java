@@ -5,6 +5,7 @@
 package com.base.engine;
 
 import com.base.game.Game;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.lwjgl.LWJGLException;
@@ -28,7 +29,7 @@ public class Main {
         gameLoop();
         cleanUp();
     }
-    public static void GameObject[] SphereCollide(float x, float y, float radius){
+    public static ArrayList<GameObject> sphereCollide(float x, float y, float radius){
         return game.SphereCollide(x, y, radius);
     }
     private static void initGame(){

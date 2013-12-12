@@ -47,4 +47,13 @@ public class Enermy extends GameObject {
     protected void Die(){
         
     }
+    public void setTarget(GameObject go){
+        target = go;
+    }
+    public GameObject getTarget(){
+        return target;
+    }
+    public Stats getStats(){
+        return stats;
+    }
 }

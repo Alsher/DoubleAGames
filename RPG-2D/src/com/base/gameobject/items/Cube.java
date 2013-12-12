@@ -4,7 +4,6 @@
  */
 package com.base.gameobject.items;
 
-import com.base.engine.Physiks;
 import com.base.gameobject.Player;
 
 /**

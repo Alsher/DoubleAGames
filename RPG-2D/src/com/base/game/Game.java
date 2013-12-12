@@ -49,7 +49,7 @@ public class Game {
         for(GameObject go : objects)
             go.render();
     }
-    public GameObject[] SphereCollide(float x, float y, float radius){
+    public ArrayList<GameObject> SphereCollide(float x, float y, float radius){
         ArrayList<GameObject> res = new ArrayList<GameObject>();
         
         for(GameObject go : objects){
@@ -57,7 +57,7 @@ public class Game {
                 res.add(go);
         }
         
-        return (GameObject[])res.toArray();
+        return res;
     }
     
 }
