@@ -36,7 +36,7 @@ public class Stats {
     
     public int getCurrentHealth(){
         int max = getMaxHealth();
-        if(health < max)
+        if(health > max) /** always the small ones **/
             health = max;
         
         return health;
