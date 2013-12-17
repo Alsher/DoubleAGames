@@ -4,6 +4,7 @@
  */
 package com.base.gameobject;
 
+import com.base.game.Time;
 import com.base.gameobject.items.Item;
 import org.lwjgl.input.Keyboard;
 
@@ -39,8 +40,8 @@ public class Player extends statObject{
     }
     
     private void move(float magX,float magY){
-        x += getSpeed() * magX;
-        y += getSpeed() * magY;
+        x += getSpeed() * magX * Time.getDelta();
+        y += getSpeed() * magY * Time.getDelta();
     }
     public void addItem(Item item){
         inventory.add(item);
