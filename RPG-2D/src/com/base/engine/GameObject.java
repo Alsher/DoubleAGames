@@ -58,7 +58,7 @@ public abstract class GameObject {
     protected void init(float x,float y,float r,float g,float b,float sx,float sy, int type){
         this.x = x;
         this.y = y;
-        this.type = 1;
+        this.type = type; /** you are already taking in the type, so USE it **/
         this.spr = new Sprite(r,g,b,sx,sy);
     }
 }

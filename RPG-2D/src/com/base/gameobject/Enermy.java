@@ -25,17 +25,18 @@ public class Enermy extends GameObject {
     public void update(){
         if(target == null)
             Look();
-        else{
-            
         
-        
-            if(Util.LineOfSight(this, target))
-                Attack();
-            
-            
         else
-            Chase(); 
-            }  
+        {
+            /** needs to be implemented correctly **/
+            //if(Util.LineOfSight(this, target) && Util.Dist(x, y, getTarget().getX(), getTarget().getY()) <= 128)
+            //  Attack();
+            //else
+            
+            
+            Chase();
+            
+        }  
         if(stats.getCurrentHealth() <= 0)
             Die();
     }
