@@ -26,11 +26,16 @@ public class Enermy extends GameObject {
         if(target == null)
             Look();
         else{
-            Chase();
+            
+        
         
             if(Util.LineOfSight(this, target))
                 Attack();
-            }
+            
+            
+        else
+            Chase(); 
+            }  
         if(stats.getCurrentHealth() <= 0)
             Die();
     }

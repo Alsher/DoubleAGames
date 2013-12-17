@@ -22,8 +22,8 @@ public class Game {
     private Player player;
     
     public Game(){
-        objects = new ArrayList<GameObject>();
-        remove = new ArrayList<GameObject>();
+        objects = new ArrayList<>();
+        remove = new ArrayList<>();
         
         player = new Player(Display.getWidth() / 2 - Player.SIZE / 2,Display.getHeight() / 2 - Player.SIZE / 2);
         
@@ -50,7 +50,7 @@ public class Game {
             go.render();
     }
     public ArrayList<GameObject> SphereCollide(float x, float y, float radius){
-        ArrayList<GameObject> res = new ArrayList<GameObject>();
+        ArrayList<GameObject> res = new ArrayList<>();
         
         for(GameObject go : objects){
             if(Util.Dist(go.getX(),go.getY(), x, y) < radius)
