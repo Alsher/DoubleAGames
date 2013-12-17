@@ -5,6 +5,7 @@
 package com.base.engine;
 
 import com.base.game.Game;
+import com.base.game.Time;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -63,8 +64,10 @@ public class Main {
               
     }
     private static void gameLoop(){
+        Time.init();
     while(!Display.isCloseRequested()){
-        getInput();
+        Time.update();
+;       getInput();
         update();
         render();
     }

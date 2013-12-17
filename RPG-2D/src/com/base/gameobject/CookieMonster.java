@@ -6,6 +6,7 @@ package com.base.gameobject;
 
 import com.base.engine.GameObject;
 import com.base.engine.Main;
+import com.base.game.Util;
 import java.util.ArrayList;
 
 /**
@@ -16,17 +17,21 @@ public class CookieMonster extends Enermy{
     public static final int SIZE = 32;
     public static final float DAMPING = 0.5f;
     
+    public static final float SIGHT_RANGE = 128;
+    
     public CookieMonster(float x, float y, int level){
         super(level);
         this.init(x, y, 0.2f, 0.2f, 1.0f, SIZE, SIZE, 0);
+        setAttackDelay(200); 
+   
     }
     @Override
     protected void Look(){
-        ArrayList<GameObject> objects = Main.sphereCollide(x,y,128);
+        ArrayList<GameObject> objects = Main.sphereCollide(x,y,SIGHT_RANGE);
         
         for(GameObject go : objects)
             if(go.getType() == PLAYER_ID)
-                setTarget(go);
+                setTarget((statObject)go);
     }
     @Override
     protected void Chase(){
@@ -47,5 +52,19 @@ public class CookieMonster extends Enermy{
         
         x = x + speedX;
         y = y + speedY;
+    }
+    @Override 
+    protected void Attack(){
+        
+        
+        //todo hurt im
+        damage(getAttackDamage());
+        System.out.println("enermy health " + getCurrentHealth() + "/" + getMaxHealth());
+        restartAttackDelay();
+    }
+    
+    @Override
+    protected void Death(){
+        remove();
     }
 }

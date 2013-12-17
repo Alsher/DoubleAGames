@@ -15,7 +15,7 @@ public class Util {
         return true;
     }
     
-    public static float Dist(float x1, float y1, float x2, float y2){
+    public static float dist(float x1, float y1, float x2, float y2){
         double x = x2 - x1;
         double y = y2 - y1;
         

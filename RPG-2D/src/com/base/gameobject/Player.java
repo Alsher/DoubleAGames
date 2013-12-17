@@ -4,7 +4,6 @@
  */
 package com.base.gameobject;
 
-import com.base.engine.GameObject;
 import com.base.gameobject.items.Item;
 import org.lwjgl.input.Keyboard;
 
@@ -12,10 +11,10 @@ import org.lwjgl.input.Keyboard;
  *
  * @author Malik
  */
-public class Player extends GameObject{
+public class Player extends statObject{
     
     public static final float SIZE = 32;
-    private Stats stats;
+    
     private Inventory inventory;
 
     public Player(float x, float y){
@@ -46,29 +45,7 @@ public class Player extends GameObject{
     public void addItem(Item item){
         inventory.add(item);
     }
-    public float getSpeed(){
-        return stats.getSpeed();
-    }
     
-    public int getLevel(){
-        return stats.getLevel();
-    }
-    
-    public int getMaxHealth(){
-        return stats.getMaxHealth();
-    }
-    
-    public int getCurrentHealth(){
-        return stats.getCurrentHealth();
-    }
-    
-    public float getStrength(){
-        return stats.getStrength();
-    }
-    
-    public float getMagic(){
-        return stats.getMagic();
-    }
     public void addXP(float amt){
         stats.addXP(amt);
     }

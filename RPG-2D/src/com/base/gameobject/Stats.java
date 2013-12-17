@@ -53,17 +53,20 @@ public class Stats {
         
         return (int)(d * 2 / 3);
     }
-    public void addXP(float amt){
-        xp += amt;
-    }
+    
     public int getMaxHealth(){
         return (getLevel() * 10);
     }
     public float getStrength(){
         return getLevel() * 4f;
     }
-    
     public float getMagic(){
         return getLevel() * 4f;
+    }
+    public void addXP(float amt){
+        xp += amt;
+    }
+    public void damage(int amt){
+        health -= amt;
     }
 }

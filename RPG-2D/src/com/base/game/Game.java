@@ -53,7 +53,7 @@ public class Game {
         ArrayList<GameObject> res = new ArrayList<>();
         
         for(GameObject go : objects){
-            if(Util.Dist(go.getX(),go.getY(), x, y) < radius)
+            if(Util.dist(go.getX(),go.getY(), x, y) < radius)
                 res.add(go);
         }
         
