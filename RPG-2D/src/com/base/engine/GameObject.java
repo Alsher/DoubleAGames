@@ -11,8 +11,9 @@ import static org.lwjgl.opengl.GL11.*;
  * @author Malik
  */
 public abstract class GameObject {
-    public static final int PLAYER_ID = 2;
     public static final int ITEM_ID = 1;
+    public static final int PLAYER_ID = 2;
+    public static final int ENEMY_ID = 3;
     
     protected float x;
     protected float y;

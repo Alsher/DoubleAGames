@@ -33,6 +33,9 @@ public class Main {
     public static ArrayList<GameObject> sphereCollide(float x, float y, float radius){
         return game.SphereCollide(x, y, radius);
     }
+    public static ArrayList<GameObject> rectangleCollide(float x1, float y1, float x2, float y2){
+        return game.rectangleCollide(x1,y1,x2,y2);
+    }
     private static void initGame(){
         game = new Game();
     }

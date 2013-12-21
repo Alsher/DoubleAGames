@@ -5,9 +5,11 @@
 package com.base.game;
 
 import com.base.engine.GameObject;
+import com.base.engine.Physiks;
 import com.base.gameobject.CookieMonster;
 import com.base.gameobject.Player;
 import com.base.gameobject.items.Cube;
+import java.awt.Rectangle;
 import java.util.ArrayList;
 import org.lwjgl.opengl.Display;
 
@@ -54,6 +56,21 @@ public class Game {
         
         for(GameObject go : objects){
             if(Util.dist(go.getX(),go.getY(), x, y) < radius)
+                res.add(go);
+        }
+        
+        return res;
+    }
+    public ArrayList<GameObject> rectangleCollide(float x1, float y1, float x2, float y2){
+        ArrayList<GameObject> res = new ArrayList<GameObject>();
+        
+        float sx = x2 - x1;
+        float sy = y2 - y1;
+        
+        Rectangle collider = new Rectangle((int)x1, (int)y1, (int)sx, (int)sy);
+        
+        for(GameObject go : objects){
+            if(Physiks.checkCollision(collider, go) != null)
                 res.add(go);
         }
         
