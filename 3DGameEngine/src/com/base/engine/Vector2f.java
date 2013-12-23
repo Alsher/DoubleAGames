@@ -1,8 +1,9 @@
 package com.base.engine;
 
-public class Vector2f {
-
-	private float x, y;
+public class Vector2f 
+{
+	private float x;
+	private float y;
 	
 	public Vector2f(float x, float y)
 	{
@@ -20,14 +21,11 @@ public class Vector2f {
 		return x * r.getX() + y * r.getY();
 	}
 	
-	public Vector2f normalize()
+	public Vector2f normalized()
 	{
-		float length =  length();
+		float length = length();
 		
-		x /= length;
-		y /= length;
-		
-		return this;
+		return new Vector2f(x / length, y / length);
 	}
 	
 	public Vector2f rotate(float angle)
@@ -36,11 +34,9 @@ public class Vector2f {
 		double cos = Math.cos(rad);
 		double sin = Math.sin(rad);
 		
-		/** rotate function **/
-		return new Vector2f((float)(x * cos - y * sin), (float)(x * sin + y * cos));
+		return new Vector2f((float)(x * cos - y * sin),(float)(x * sin + y * cos));
 	}
 	
-	/** Vector Math functions **/
 	public Vector2f add(Vector2f r)
 	{
 		return new Vector2f(x + r.getX(), y + r.getY());
@@ -80,28 +76,34 @@ public class Vector2f {
 	{
 		return new Vector2f(x / r, y / r);
 	}
-	/** **/
 	
+	public Vector2f abs()
+	{
+		return new Vector2f(Math.abs(x), Math.abs(y));
+	}
 	
 	public String toString()
 	{
 		return "(" + x + " " + y + ")";
 	}
 	
-	public float getX() {
+	public float getX() 
+	{
 		return x;
 	}
 
-	public void setX(float x) {
+	public void setX(float x) 
+	{
 		this.x = x;
 	}
 
-	public float getY() {
+	public float getY() 
+	{
 		return y;
 	}
 
-	public void setY(float y) {
+	public void setY(float y)
+	{
 		this.y = y;
 	}
-	
 }
