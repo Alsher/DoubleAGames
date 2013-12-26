@@ -18,7 +18,8 @@ public class Level {
 	private Transform transform;
 	
 	//WARNING: Temp variable!
-	private Door door;
+	//private Door door;
+	private ArrayList<Door> doors;
 	
 	public Level(String levelName, String textureName)
 	{
@@ -27,12 +28,13 @@ public class Level {
 		transform = new Transform();
 		
 		shader = BasicShader.getInstance();
+		doors = new ArrayList<Door>();
 		
 		generateLevel();
 		Transform tempTransform = new Transform();
 		tempTransform.setTranslation(new Vector3f(8, 0, 8));
 		
-		door = new Door(tempTransform, material);
+		
 	}
 	
 	public void input()
@@ -42,7 +44,8 @@ public class Level {
 	
 	public void update()
 	{
-		door.update();
+		for(Door door : doors)
+			door.update();
 	}
 	
 	public void render()
@@ -50,7 +53,8 @@ public class Level {
 		shader.bind();
 		shader.updateUniforms(transform.getTransformation(), transform.getProjectedTransformation(), material);
 		mesh.draw();
-		door.render();
+		for(Door door : doors)
+			door.render();
 	}
 	
 	public Vector3f checkCollision(Vector3f oldPos, Vector3f newPos, float objectWidth, float objectLength)
@@ -70,13 +74,15 @@ public class Level {
 				for(int j = 0; j < level.getHeight(); j++)
 					if((level.getPixel(i, j) & 0xFFFFFF) == 0)
 						collisionVector = collisionVector.mul(rectCollide(oldPos2, newPos2, objectSize, blockSize.mul(new Vector2f(i,j)), blockSize));
-					
+			
+			/*
 			Vector2f doorSize = new Vector2f(Door.LENGTH, Door.WIDTH);
 			Vector3f doorPos3f = door.getTransform().getTranslation();
 			Vector2f doorPos2f = new Vector2f(doorPos3f.getX(), doorPos3f.getZ());
-			
-			/**collisionVector.mul for adding the door collision**/
+		
+			collisionVector.mul for adding the door collision
 			collisionVector = collisionVector.mul(rectCollide(oldPos2, newPos2, objectSize, doorPos2f, doorSize));
+			*/
 		}
 		
 		return new Vector3f(collisionVector.getX(), 0, collisionVector.getY());
@@ -170,6 +176,40 @@ public class Level {
 		}
 	}
 	
+	private void addDoor(int x, int y)
+	{
+		Transform doorTransform = new Transform();
+		
+		boolean xDoor = (level.getPixel(x, y - 1) & 0xFFFFFF) == 0 && (level.getPixel(x, y + 1) & 0xFFFFFF) == 0;
+		boolean yDoor = (level.getPixel(x - 1, y) & 0xFFFFFF) == 0 && (level.getPixel(x + 1, y) & 0xFFFFFF) == 0;
+		
+		if(!(xDoor ^ yDoor)) //^ -> XOR
+		{
+			System.err.println("Level generation has failed! Door is placed in an invalid location: " + x + ", "+ y);
+			new Exception().printStackTrace();
+			System.exit(-1);
+		}
+		
+		if(yDoor)
+		{
+			doorTransform.setTranslation(x, 0, y + SPOT_LENGTH / 2); //y + SPOT_LENGTH / 2
+		}
+		
+		if(xDoor)
+		{
+			doorTransform.setTranslation(x + SPOT_WIDTH / 2, 0, y); //x + SPOT_WIDTH / 2
+			doorTransform.setRotation(0, 90, 0);
+		}
+		
+		doors.add(new Door(doorTransform, material));
+	}
+	
+	private void addSpecial(int blueValue, int x, int y)
+	{
+		if(blueValue == 16)
+			addDoor(x, y);
+	}
+	
 	private void generateLevel()
 	{
 		ArrayList<Vertex> vertices = new ArrayList<>();
@@ -183,7 +223,10 @@ public class Level {
 					continue;
 					
 				float[] texCoords = calcTexCoords((level.getPixel(i, j) & 0x00FF00) >> 8);
-
+				
+				//Generate Doors
+				addSpecial(level.getPixel(i, j) & 0x0000FF, i, j);
+				
 				//Generate Floor
 				addFace(indices, vertices.size(), true);
 				addVertices(vertices, i, j,  0, true, false, true,texCoords);
