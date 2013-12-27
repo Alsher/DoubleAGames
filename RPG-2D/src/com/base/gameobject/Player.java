@@ -5,8 +5,8 @@
 package com.base.gameobject;
 
 import com.base.engine.GameObject;
-import com.base.engine.Main;
 import com.base.game.Delay;
+import com.base.game.Game;
 import com.base.game.Time;
 import com.base.game.Util;
 import com.base.gameobject.items.Item;
@@ -38,15 +38,24 @@ public class Player extends statObject{
         stats = new Stats(0, true);
         inventory = new Inventory(20);
         attackDelay = new Delay(500);
-        attackRange = 128;
+        attackRange = 49;
         attackDamage = 1;
         facingDirection = 0;
-        attackDelay.end();
+        attackDelay.terminate();
     }
     @Override
     public void update()
     {
         //System.out.println("States: SPEED: " + getSpeed() + " Level: " + getLevel() + " MAXHP: " + getMaxHealth() + " HP: " + getCurrentHealth() + " STRENGTH: " + getStrength() + " MAGIC: " + getMagic());
+        ArrayList<GameObject> objects = Game.rectangleCollide(x, y, x + SIZE, y + SIZE);
+        
+        for(GameObject go : objects){
+            if(go.getType() == GameObject.ITEM_ID){
+                System.out.println("You just picked up an " + ((Item)go).getName() + "!");
+                go.remove();
+                addItem((Item)go);
+            }
+        }
     }    
     public void getInput(){
         if(Keyboard.isKeyDown(Keyboard.KEY_W))
@@ -57,7 +66,7 @@ public class Player extends statObject{
             move(-1,0);
         if(Keyboard.isKeyDown(Keyboard.KEY_D))
             move(1,0);
-        if(Keyboard.isKeyDown(Keyboard.KEY_SPACE) && attackDelay.over())
+        if(Keyboard.isKeyDown(Keyboard.KEY_SPACE) && attackDelay.isOver())
             attack();
     }
     public void attack(){
@@ -67,13 +76,13 @@ public class Player extends statObject{
         ArrayList<GameObject> objects = new ArrayList<GameObject>();
         
         if(facingDirection == FORWARD)
-            objects = Main.rectangleCollide(x, y, x + SIZE, y + attackRange);
+            objects = Game.rectangleCollide(x, y, x + SIZE, y + attackRange);
         else if(facingDirection == BACKWARD)
-            objects = Main.rectangleCollide(x, y, x + SIZE, y - attackRange);
+            objects = Game.rectangleCollide(x, y - attackRange + SIZE, x + SIZE, y);
         else if(facingDirection == LEFT)
-            objects = Main.rectangleCollide(x, y, x - attackRange, y + SIZE);
+            objects = Game.rectangleCollide(x - attackRange + SIZE, y, x, y + SIZE);
         else if(facingDirection == RIGHT)
-            objects = Main.rectangleCollide(x, y, x + attackRange, y + SIZE);
+            objects = Game.rectangleCollide(x, y, x + attackRange, y + SIZE);
         
         ArrayList<Enemy> enemies = new ArrayList<Enemy>();
         
@@ -98,7 +107,7 @@ public class Player extends statObject{
         else
             System.out.println(" no target");
         
-        attackDelay.start();
+        attackDelay.restart();
     }
     public void addItem(Item item){
         inventory.add(item);

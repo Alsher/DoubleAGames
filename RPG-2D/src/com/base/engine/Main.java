@@ -6,7 +6,6 @@ package com.base.engine;
 
 import com.base.game.Game;
 import com.base.game.Time;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.lwjgl.LWJGLException;
@@ -21,8 +20,6 @@ import static  org.lwjgl.opengl.GL11.*;
  */
 public class Main {
     
-    private static Game game;
-    
     public static void main(String[] args){
         initDisplay();
         initGL();
@@ -30,26 +27,21 @@ public class Main {
         gameLoop();
         cleanUp();
     }
-    public static ArrayList<GameObject> sphereCollide(float x, float y, float radius){
-        return game.SphereCollide(x, y, radius);
-    }
-    public static ArrayList<GameObject> rectangleCollide(float x1, float y1, float x2, float y2){
-        return game.rectangleCollide(x1,y1,x2,y2);
-    }
+    
     private static void initGame(){
-        game = new Game();
+        Game.game = new Game();
     }
     private static void getInput(){
-        game.getInput();
+        Game.game.getInput();
     }
     private static void update(){
-        game.update();
+        Game.game.update();
     }
     private static void render(){
         glClear(GL_COLOR_BUFFER_BIT);
         glLoadIdentity();
         
-        game.render();
+        Game.game.render();
         
         Display.update();
         Display.sync(60);

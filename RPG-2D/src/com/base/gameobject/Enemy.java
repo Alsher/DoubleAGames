@@ -5,9 +5,9 @@
 package com.base.gameobject;
 
 import com.base.engine.GameObject;
-import com.base.engine.Main;
 import com.base.engine.Sprite;
 import com.base.game.Delay;
+import com.base.game.Game;
 import com.base.game.Time;
 import com.base.game.Util;
 import static com.base.gameobject.CookieMonster.DAMPING;
@@ -32,7 +32,7 @@ public class Enemy extends statObject {
         attackDelay = new Delay(1000);
         attackRange = 48f;
         attackDamage = 1;
-        attackDelay.end();
+        attackDelay.terminate();
         sightRange = 128;
         type = ENEMY_ID;
     }
@@ -44,7 +44,7 @@ public class Enemy extends statObject {
         {   
             /** needs to be implemented correctly **/
             if(Util.LineOfSight(this, target) && Util.dist(x, y, getTarget().getX(),getTarget().getY()) <= attackRange){
-                if(attackDelay.over())
+                if(attackDelay.isOver())
                 Attack();
             }
             else
@@ -57,13 +57,13 @@ public class Enemy extends statObject {
     protected void Attack(){
         getTarget().damage(getAttackDamage());
         System.out.println("This is madness" + getTarget().getCurrentHealth() + "/" + getTarget().getMaxHealth());
-        restartAttackDelay();
+        attackDelay.restart();
     }
     protected void Death(){
         remove();
     }
     protected void Look(){
-        ArrayList<GameObject> objects = Main.sphereCollide(x,y,sightRange);
+        ArrayList<GameObject> objects = Game.SphereCollide(x,y,sightRange);
         
         for(GameObject go : objects)
             if(go.getType() == PLAYER_ID)
@@ -106,13 +106,10 @@ public class Enemy extends statObject {
     }
     public void setAttackDelay(int time){
         attackDelay = new Delay(time);
-        attackDelay.end();
+        attackDelay.terminate();
     }
     public void setAttackDamage(int amt){
         attackDamage = amt;
-    }
-    public void restartAttackDelay(){
-        attackDelay.start();
     }
     public void setSightRange(float dist){
         sightRange = dist;

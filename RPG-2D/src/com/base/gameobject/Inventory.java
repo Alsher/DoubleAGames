@@ -57,9 +57,7 @@ public class Inventory {
     public void remove(Item item){
         for(int i = 0; i < items.length; i++)
             if(items[i] == item){
-                items[1] = null;
-                if(i < firstFree)
-                    firstFree = i;
+                remove(i);
                 return;
             }
     }

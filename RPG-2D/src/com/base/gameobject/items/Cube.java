@@ -4,8 +4,6 @@
  */
 package com.base.gameobject.items;
 
-import com.base.gameobject.Player;
-
 /**
  *
  * @author Malik
@@ -13,8 +11,7 @@ import com.base.gameobject.Player;
 public class Cube extends Item{
     public static final float SIZE = 32;
     
-    public Cube(float x, float y, Player play){
-        super(play);
+    public Cube(float x, float y){
         init(x,y,1f,0.5f,0.0f,SIZE,SIZE,"The Cube");
     }
 }
