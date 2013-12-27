@@ -10,7 +10,11 @@ package com.base.gameobject;
  * @author Malik
  */
 public class Stats {
-    public static final double LEVEL_KONST = 25.0 * Math.pow(3.0,3.0/2.0);
+    
+    public static final int MAX_LEVEL = 99;
+    public static final int MAX_XP = 999999;
+    public static final double LEVEL_CONST = (double)MAX_XP/((double)MAX_LEVEL * (double)MAX_LEVEL);
+    //public static final double LEVEL_KONST = 25.0 * Math.pow(3.0,3.0/2.0);
     
     private float xp;
     private int level;
@@ -44,14 +48,18 @@ public class Stats {
     public int getLevel(){
         if(!levelable)
             return level;
+        //calculat lvl from XP  lvl = sqrt(XP/a)
         
+        return (int)Math.sqrt((double)xp/LEVEL_CONST);
+        
+        /* OLD LEVELING
         double  x = xp + 105.0;
         
         double a = Math.sqrt(243.0 * xp * xp + 4050.0 * xp + 17500.0);
         double c = (3.0 * xp +25.0)/25.0;
         double d = Math.sqrt(a / LEVEL_KONST + c);
         
-        return (int)(d-1 / d/3) - 1;
+        return (int)(d - 3/d) - 1;*/
     }
     
     public int getMaxHealth(){

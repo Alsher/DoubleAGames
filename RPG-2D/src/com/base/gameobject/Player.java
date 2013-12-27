@@ -20,7 +20,9 @@ import org.lwjgl.input.Keyboard;
 public class Player extends statObject{
     
     public static final float SIZE = 32;
+    
     private Inventory inventory;
+    private Equipment equipment;
     
     public static final int FORWARD = 0;
     public static final int BACKWARD = 1;
@@ -37,6 +39,7 @@ public class Player extends statObject{
         init(x,y,0.1f,1f,0.3f,SIZE,SIZE,PLAYER_ID);
         stats = new Stats(0, true);
         inventory = new Inventory(20);
+        equipment = new Equipment(inventory);
         attackDelay = new Delay(500);
         attackRange = 49;
         attackDamage = 1;
