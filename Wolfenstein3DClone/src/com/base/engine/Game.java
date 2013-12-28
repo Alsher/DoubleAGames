@@ -7,8 +7,9 @@ public class Game {
 	
 	public Game()
 	{
-		level = new Level("level2.png", "WolfCollection.png");
-		player = new Player(new Vector3f(7, 0.4375f, 7));
+		Player player = new Player(new Vector3f(7, 0.4375f, 7));
+		level = new Level("level2.png", "WolfCollection.png", player);
+		//player = new Player(new Vector3f(7, 0.4375f, 7));
 		
 		Transform.setProjection(70, Window.getWidth(), Window.getHeight(), 0.01f, 1000f);
 		Transform.setCamera(player.getCamera());
@@ -17,19 +18,16 @@ public class Game {
 	public void input()
 	{
 		level.input();
-		player.input();
 	}
 	
 	public void update()
 	{
 		level.update();
-		player.update();
 	}
 	
 	public void render()
 	{
 		level.render();
-		player.render();
 	}
 	
 	public static Level getLevel()

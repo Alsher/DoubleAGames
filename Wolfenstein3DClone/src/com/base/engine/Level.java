@@ -11,18 +11,24 @@ public class Level {
 	private static final float SPOT_HEIGHT = 1;
 	private static final float SPOT_LENGTH = 1;
 	
+	private static final float OPEN_DISTANCE = 1.0f;
+	private static final float DOOR_OPEN_MOVEMENT_AMOUNT = 0.9f;
+	
 	private Mesh mesh;
 	private Bitmap level;
 	private Shader shader;
 	private Material material;
 	private Transform transform;
 	
+	private Player player;
+	
 	//WARNING: Temp variable!
 	//private Door door;
 	private ArrayList<Door> doors;
 	
-	public Level(String levelName, String textureName)
+	public Level(String levelName, String textureName, Player player)
 	{
+		this.player = player;
 		level = new Bitmap(levelName).flipY();
 		material = new Material(new Texture(textureName));
 		transform = new Transform();
@@ -39,13 +45,26 @@ public class Level {
 	
 	public void input()
 	{
+		player.input();
 		
+		if(Input.getKeyDown(Input.KEY_E)){
+			for(Door door : doors)
+			{
+				if(door.getTransform().getTranslation().sub(player.getCamera().getPos()).length() < OPEN_DISTANCE)
+				{
+					door.open();
+					
+				}
+			}
+		}
 	}
 	
 	public void update()
 	{
 		for(Door door : doors)
 			door.update();
+		
+		player.update();
 	}
 	
 	public void render()
@@ -55,6 +74,8 @@ public class Level {
 		mesh.draw();
 		for(Door door : doors)
 			door.render();
+		
+		player.render();
 	}
 	
 	public Vector3f checkCollision(Vector3f oldPos, Vector3f newPos, float objectWidth, float objectLength)
@@ -74,15 +95,16 @@ public class Level {
 				for(int j = 0; j < level.getHeight(); j++)
 					if((level.getPixel(i, j) & 0xFFFFFF) == 0)
 						collisionVector = collisionVector.mul(rectCollide(oldPos2, newPos2, objectSize, blockSize.mul(new Vector2f(i,j)), blockSize));
+
+			//TODO: Make this take into account the doors orientation
+			for(Door door : doors)
+			{
+				Vector2f doorSize = door.getDoorSize();
+				Vector3f doorPos3f = door.getTransform().getTranslation();
+				Vector2f doorPos2f = new Vector2f(doorPos3f.getX(), doorPos3f.getZ());
 			
-			/*
-			Vector2f doorSize = new Vector2f(Door.LENGTH, Door.WIDTH);
-			Vector3f doorPos3f = door.getTransform().getTranslation();
-			Vector2f doorPos2f = new Vector2f(doorPos3f.getX(), doorPos3f.getZ());
-		
-			collisionVector.mul for adding the door collision
-			collisionVector = collisionVector.mul(rectCollide(oldPos2, newPos2, objectSize, doorPos2f, doorSize));
-			*/
+				collisionVector = collisionVector.mul(rectCollide(oldPos2, newPos2, objectSize, doorPos2f, doorSize));
+			}
 		}
 		
 		return new Vector3f(collisionVector.getX(), 0, collisionVector.getY());
@@ -177,32 +199,36 @@ public class Level {
 	}
 	
 	private void addDoor(int x, int y)
-	{
-		Transform doorTransform = new Transform();
-		
-		boolean xDoor = (level.getPixel(x, y - 1) & 0xFFFFFF) == 0 && (level.getPixel(x, y + 1) & 0xFFFFFF) == 0;
-		boolean yDoor = (level.getPixel(x - 1, y) & 0xFFFFFF) == 0 && (level.getPixel(x + 1, y) & 0xFFFFFF) == 0;
-		
-		if(!(xDoor ^ yDoor)) //^ -> XOR
-		{
-			System.err.println("Level generation has failed! Door is placed in an invalid location: " + x + ", "+ y);
-			new Exception().printStackTrace();
-			System.exit(-1);
-		}
-		
-		if(yDoor)
-		{
-			doorTransform.setTranslation(x, 0, y + SPOT_LENGTH / 2); //y + SPOT_LENGTH / 2
-		}
-		
-		if(xDoor)
-		{
-			doorTransform.setTranslation(x + SPOT_WIDTH / 2, 0, y); //x + SPOT_WIDTH / 2
-			doorTransform.setRotation(0, 90, 0);
-		}
-		
-		doors.add(new Door(doorTransform, material));
-	}
+    {
+            Transform doorTransform = new Transform();
+
+            boolean xDoor = (level.getPixel(x, y - 1) & 0xFFFFFF) == 0 && (level.getPixel(x, y + 1) & 0xFFFFFF) == 0;
+            boolean yDoor = (level.getPixel(x - 1, y) & 0xFFFFFF) == 0 && (level.getPixel(x + 1, y) & 0xFFFFFF) == 0;
+
+            if(!(xDoor ^ yDoor))
+            {
+                    System.err.println("Level Generation has failed! :( You placed a door in an invalid location at " + x + ", " + y);
+                    new Exception().printStackTrace();
+                    System.exit(1);
+            }
+
+            Vector3f openPosition = null;
+
+            if(yDoor)
+            {
+                    doorTransform.setTranslation(x, 0, y + SPOT_LENGTH / 2);
+                    openPosition = doorTransform.getTranslation().sub(new Vector3f(DOOR_OPEN_MOVEMENT_AMOUNT, 0.0f, 0.0f));
+            }
+
+            if(xDoor)
+            {
+                    doorTransform.setTranslation(x + SPOT_WIDTH / 2, 0, y);
+                    doorTransform.setRotation(0, 90, 0);
+                    openPosition = doorTransform.getTranslation().sub(new Vector3f(0.0f, 0.0f, DOOR_OPEN_MOVEMENT_AMOUNT));
+            }
+
+            doors.add(new Door(doorTransform, material, openPosition));
+    }
 	
 	private void addSpecial(int blueValue, int x, int y)
 	{
