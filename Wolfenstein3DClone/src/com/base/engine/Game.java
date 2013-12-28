@@ -3,7 +3,7 @@ package com.base.engine;
 public class Game {
 	
 	private static Level level;
-	private Player player;
+	//private Player player;
 	
 	public Game()
 	{
