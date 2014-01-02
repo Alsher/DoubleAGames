@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/3DGameEngine.iml" filepath="$PROJECT_DIR$/3DGameEngine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Wolfenstein3DClone.iml" filepath="$PROJECT_DIR$/Wolfenstein3DClone.iml" />
     </modules>
   </component>
 </project>

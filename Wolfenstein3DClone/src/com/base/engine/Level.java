@@ -19,12 +19,13 @@ public class Level {
 	private Shader shader;
 	private Material material;
 	private Transform transform;
-	
 	private Player player;
+    private ArrayList<Door> doors;
 	
 	//WARNING: Temp variable!
 	//private Door door;
-	private ArrayList<Door> doors;
+    private Monster monster;
+
 	
 	public Level(String levelName, String textureName, Player player)
 	{
@@ -39,24 +40,18 @@ public class Level {
 		generateLevel();
 		Transform tempTransform = new Transform();
 		tempTransform.setTranslation(new Vector3f(8, 0, 8));
-		
-		
+
+        monster = new Monster(tempTransform);
 	}
 	
 	public void input()
 	{
 		player.input();
-		
-		if(Input.getKeyDown(Input.KEY_E)){
-			for(Door door : doors)
-			{
-				if(door.getTransform().getTranslation().sub(player.getCamera().getPos()).length() < OPEN_DISTANCE)
-				{
-					door.open();
-					
-				}
-			}
-		}
+
+        if(Input.getKeyDown(Input.KEY_E))
+        {
+            openDoors(player.getCamera().getPos());
+        }
 	}
 	
 	public void update()
@@ -65,6 +60,7 @@ public class Level {
 			door.update();
 		
 		player.update();
+        monster.update();
 	}
 	
 	public void render()
@@ -76,8 +72,20 @@ public class Level {
 			door.render();
 		
 		player.render();
+        monster.render();
 	}
-	
+
+    public void openDoors(Vector3f position)
+    {
+        for(Door door : doors)
+        {
+            if(door.getTransform().getTranslation().sub(position).length() < OPEN_DISTANCE)
+            {
+                door.open();
+            }
+        }
+    }
+
 	public Vector3f checkCollision(Vector3f oldPos, Vector3f newPos, float objectWidth, float objectLength)
 	{
 		Vector2f collisionVector = new Vector2f(1, 1);

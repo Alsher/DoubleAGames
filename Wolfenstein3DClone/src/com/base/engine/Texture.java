@@ -1,13 +1,13 @@
 package com.base.engine;
 
-import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL13.GL_TEXTURE0;
-import static org.lwjgl.opengl.GL13.glActiveTexture;
+import org.newdawn.slick.opengl.TextureLoader;
 
 import java.io.File;
 import java.io.FileInputStream;
 
-import org.newdawn.slick.opengl.TextureLoader;
+import static org.lwjgl.opengl.GL11.*;
+import static org.lwjgl.opengl.GL13.GL_TEXTURE0;
+import static org.lwjgl.opengl.GL13.glActiveTexture;
 
 public class Texture {
 	

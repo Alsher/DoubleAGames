@@ -3,6 +3,9 @@
   <component name="EclipseModuleManager">
     <libelement value="jar:///lib/Java/slick-util/lwjgl.jar!/" />
     <libelement value="jar:///lib/Java/slick-util/slick-util.jar!/" />
+    <libelement value="jar:///lib/Java/lwjgl-2.9.1/jar/lwjgl_util.jar!/" />
+    <libelement value="jar:///lib/Java/lwjgl-2.9.1/jar/lwjgl-debug.jar!/" />
+    <libelement value="jar:///lib/Java/lwjgl-2.9.1/jar/lwjgl.jar!/" />
     <src_description expected_position="0">
       <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
     </src_description>
@@ -14,22 +17,42 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="jdk" jdkName="JavaSE-1.7" jdkType="JavaSDK" />
-    <orderEntry type="module-library">
-      <library name="lwjgl.jar">
-        <CLASSES>
-          <root url="jar:///lib/Java/slick-util/lwjgl.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="module-library">
       <library name="slick-util.jar">
         <CLASSES>
           <root url="jar:///lib/Java/slick-util/slick-util.jar!/" />
         </CLASSES>
         <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="lwjgl_util.jar">
+        <CLASSES>
+          <root url="jar:///lib/Java/lwjgl-2.9.1/jar/lwjgl_util.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="lwjgl-debug.jar">
+        <CLASSES>
+          <root url="jar:///lib/Java/lwjgl-2.9.1/jar/lwjgl-debug.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="lwjgl.jar">
+        <CLASSES>
+          <root url="jar:///lib/Java/lwjgl-2.9.1/jar/lwjgl.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="file:///lib/Java/lwjgl-2.9.1/javadoc" />
+        </JAVADOC>
         <SOURCES />
       </library>
     </orderEntry>
