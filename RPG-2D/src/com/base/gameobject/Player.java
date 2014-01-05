@@ -129,7 +129,7 @@ public class Player extends statObject{
         if(magX == 1 && magY == 0)
             facingDirection = RIGHT;
         
-        x += getSpeed() * magX * Time.getDelta();
-        y += getSpeed() * magY * Time.getDelta();
+        x += 4f * magX * Time.getDelta();
+        y += 4f * magY * Time.getDelta();
     }
 }

@@ -29,6 +29,7 @@ public class Game {
     public Game(){
         objects = new ArrayList<>();
         remove = new ArrayList<>();
+        RPGRandom.initRand();
         
         player = new Player(Display.getWidth() / 2 - Player.SIZE / 2,Display.getHeight() / 2 - Player.SIZE / 2);
         

@@ -73,7 +73,7 @@ public class Enemy extends statObject {
         float speedX = (getTarget().getX() - x);
         float speedY = (getTarget().getY() - y);
         
-        float maxSpeed = getStats().getSpeed() * DAMPING;
+        float maxSpeed = 2f;//getStats().getSpeed() * DAMPING;
         
         if(speedX > maxSpeed)
             speedX = maxSpeed;
