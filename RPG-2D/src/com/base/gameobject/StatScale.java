@@ -27,16 +27,18 @@ public class StatScale {
     
     private double[] scales;
     private double[] scaleBonus;
+    private RPGRandom rand;
     
     public StatScale(){
     scales = new double[NUM_STATS];
     scaleBonus = new double[NUM_STATS];
+    rand = new RPGRandom();
     }
     public void generateStatScale(){
         double sum = 0;
         
         for(int i = 0; i < NUM_STATS; i++){
-            double val = RPGRandom.nextDouble(1);
+            double val = rand.nextDouble();
             scales[i] = val;
             sum += val * val;
             }
