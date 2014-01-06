@@ -160,20 +160,20 @@ public class Level {
 	}
 	
 	private float[] calcTexCoords(int value)
-	{
-		int texX = value / NUM_TEXTURES;
-		int texY = texX % NUM_TEX_EXP;
-		texX /= NUM_TEX_EXP;
-		
-		float[] result = new float[4];
-		
-		result[0] 	= 1f - (float)texX / (float)NUM_TEX_EXP;
-		result[1]	= result[0] - 1f / (float)NUM_TEX_EXP;
-		result[3]	= 1f - (float)texY / (float)NUM_TEX_EXP;
-		result[2]	= result[3] - 1f / (float)NUM_TEX_EXP;
-		
-		return result;
-	}
+    {
+        int texX = value / NUM_TEXTURES;
+        int texY = texX % NUM_TEX_EXP;
+        texX /= NUM_TEX_EXP;
+
+        float[] result = new float[4];
+
+        result[0] 	= 1f - (float)texX / (float)NUM_TEX_EXP;
+        result[1]	= result[0] - 1f / (float)NUM_TEX_EXP;
+        result[3]	= 1f - (float)texY / (float)NUM_TEX_EXP;
+        result[2]	= result[3] - 1f / (float)NUM_TEX_EXP;
+
+        return result;
+    }
 	
 	private void addVertices(ArrayList<Vertex> vertices, int i, int j, float offset, boolean x, boolean y, boolean z, float[] texCoords)
 	{
@@ -234,7 +234,6 @@ public class Level {
                     doorTransform.setRotation(0, 90, 0);
                     openPosition = doorTransform.getTranslation().sub(new Vector3f(0.0f, 0.0f, DOOR_OPEN_MOVEMENT_AMOUNT));
             }
-
             doors.add(new Door(doorTransform, material, openPosition));
     }
 	

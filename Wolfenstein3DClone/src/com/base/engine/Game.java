@@ -23,6 +23,7 @@ public class Game {
 	public void update()
 	{
 		level.update();
+
 	}
 	
 	public void render()
