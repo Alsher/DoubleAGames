@@ -15,6 +15,5 @@ public class CookieMonster extends Enemy{
         super(level);
         this.init(x, y, 0.2f, 0.2f, 1.0f, SIZE, SIZE, 0);
         setAttackDelay(1000); 
-   
     }
 }

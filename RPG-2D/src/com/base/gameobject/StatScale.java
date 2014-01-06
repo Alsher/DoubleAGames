@@ -38,19 +38,17 @@ public class StatScale {
         double sum = 0;
         
         for(int i = 0; i < NUM_STATS; i++){
-            double val = rand.nextDouble();
+            double val = Math.abs(rand.nextDouble());
             scales[i] = val;
-            sum += val * val;
+            sum += val;
             }
-        sum = Math.sqrt(sum);
         
         //normalize
         for(int i = 0; i < NUM_STATS; i++){
             scales[i] /= sum;
-            if(scales[i] < MIN_STATSCALE){
-                generateStatScale();
-                return;
-                }
+            scales[i] *= (1.0 - MIN_STATSCALE * MIN_STATSCALE * NUM_STATS);
+            scales[i] += MIN_STATSCALE * MIN_STATSCALE;
+            scales[i] = Math.sqrt(scales[i]);
             }
     }
     public double getScale(int stat){

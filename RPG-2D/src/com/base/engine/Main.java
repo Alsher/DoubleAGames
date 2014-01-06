@@ -60,13 +60,14 @@ public class Main {
     }
     private static void gameLoop(){
         Time.init();
-    while(!Display.isCloseRequested()){
-        Time.update();
-;       getInput();
-        update();
-        render();
+        
+        while(!Display.isCloseRequested()){
+            Time.update();
+            getInput();
+            update();
+            render();
+        }
     }
-}
     private static void cleanUp(){
         Display.destroy();
         Keyboard.destroy();

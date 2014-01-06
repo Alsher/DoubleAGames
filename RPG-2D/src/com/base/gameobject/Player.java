@@ -12,6 +12,8 @@ import com.base.game.Util;
 import com.base.gameobject.items.Item;
 import java.util.ArrayList;
 import org.lwjgl.input.Keyboard;
+import org.lwjgl.opengl.Display;
+import static org.lwjgl.opengl.GL11.glTranslatef;
 
 /**
  *
@@ -34,7 +36,9 @@ public class Player extends statObject{
     private Delay attackDelay;
     private int attackDamage;
     
-
+    private int moveAmountX;
+    private int moveAmountY;
+    
     public Player(float x, float y){
         init(x,y,0.1f,1f,0.3f,SIZE,SIZE,PLAYER_ID);
         stats = new Stats(0, true);
@@ -44,22 +48,49 @@ public class Player extends statObject{
         attackRange = 49;
         attackDamage = 1;
         facingDirection = 0;
+        moveAmountX = 0;
+        moveAmountY = 0;
         attackDelay.terminate();
     }
     @Override
     public void update()
     {
         //System.out.println("States: SPEED: " + getSpeed() + " Level: " + getLevel() + " MAXHP: " + getMaxHealth() + " HP: " + getCurrentHealth() + " STRENGTH: " + getStrength() + " MAGIC: " + getMagic());
-        ArrayList<GameObject> objects = Game.rectangleCollide(x, y, x + SIZE, y + SIZE);
+        float newX = x + (float)moveAmountX;
+        float newY = y + (float)moveAmountY;
+        
+        moveAmountX = 0;
+        moveAmountY = 0;
+        
+        ArrayList<GameObject> objects = Game.rectangleCollide(newX, newY, newX + SIZE, newY + SIZE);
+        ArrayList<GameObject> items = new ArrayList<GameObject>();
+        
+        boolean move = true;
         
         for(GameObject go : objects){
-            if(go.getType() == GameObject.ITEM_ID){
-                System.out.println("You just picked up an " + ((Item)go).getName() + "!");
-                go.remove();
-                addItem((Item)go);
-            }
+            if(go.getType() == GameObject.ITEM_ID)
+                items.add(go);
+            if(go.getSolid())
+                move = false;
         }
-    }    
+        if(!move)
+            return;
+            
+        x = newX;
+        y = newY;
+        
+        for(GameObject go: items){
+           System.out.println("You just picked up an " + ((Item)go).getName() + "!");
+           go.remove();
+           addItem((Item)go);
+           
+        }
+        if(stats.getCurrentHealth() <= 0)
+            Death();
+    }
+    protected void Death(){
+        remove();
+    }
     public void getInput(){
         if(Keyboard.isKeyDown(Keyboard.KEY_W))
             move(0,1);
@@ -115,7 +146,12 @@ public class Player extends statObject{
     public void addItem(Item item){
         inventory.add(item);
     }
-    
+    @Override
+    public void render(){
+        glTranslatef(Display.getWidth() / 2 - Player.SIZE / 2,Display.getHeight() / 2 - Player.SIZE / 2,0);
+        spr.render();
+        glTranslatef(-x,-y,0);
+    }
     public void addXP(float amt){
         stats.addXP(amt);
     }
@@ -129,7 +165,7 @@ public class Player extends statObject{
         if(magX == 1 && magY == 0)
             facingDirection = RIGHT;
         
-        x += 4f * magX * Time.getDelta();
-        y += 4f * magY * Time.getDelta();
+        moveAmountX += 4f * magX * Time.getDelta();
+        moveAmountY += 4f * magY * Time.getDelta();
     }
 }
