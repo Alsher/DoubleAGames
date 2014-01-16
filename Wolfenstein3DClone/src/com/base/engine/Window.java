@@ -17,7 +17,7 @@ public class Window {
 	{
 		try {
 				PixelFormat pixelFormat = new PixelFormat();
-	            ContextAttribs contextAtrributes = new ContextAttribs(3, 2)
+	            ContextAttribs contextAtrributes = new ContextAttribs(4, 1)
 	                .withForwardCompatible(true)
 	                .withProfileCore(true);
 	
