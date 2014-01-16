@@ -55,8 +55,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="lwjgl" level="project" />
-    <orderEntry type="library" name="slickUtil" level="project" />
   </component>
 </module>
 
