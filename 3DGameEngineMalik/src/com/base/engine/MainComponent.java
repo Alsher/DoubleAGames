@@ -9,29 +9,42 @@ public class MainComponent {
     public static final int HEIGHT = 600;
     public static final String TITLE = "3D Engine";
 
-    public MainComponent(){
+    private boolean isRunning;
 
+    public MainComponent(){
+    isRunning = false;
     }
 
     public void start(){
+        if(isRunning)
+            return;
+
         run();
     }
 
     public void stop(){
+        if(!isRunning)
+            return;
 
+        isRunning = false;
     }
 
-    public void run(){
-        while(!Window.isCloseRequested()){
+    private void run(){
+        isRunning = true;
+
+        while(isRunning){
+            if(Window.isCloseRequested())
+                stop();
+
             render();
         }
     }
 
-    public void render(){
+    private void render(){
         Window.render();
     }
 
-    public void cleanUp(){
+    private void cleanUp(){
 
     }
 
