@@ -1,15 +1,14 @@
 package com.base.engine;
 
-import static org.lwjgl.opengl.GL20.*;
-import static org.lwjgl.opengl.GL32.*;
-
 import org.lwjgl.opengl.GL11;
+import org.lwjgl.util.glu.GLU;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.HashMap;
 
-import org.lwjgl.util.glu.GLU;
+import static org.lwjgl.opengl.GL20.*;
+import static org.lwjgl.opengl.GL32.*;
 
 public class Shader {
 
@@ -123,7 +122,14 @@ public class Shader {
 	{
 		int errorCheckValue = GL11.glGetError();
 		
-		glLinkProgram(program); //link shader into one		
+		glLinkProgram(program); //link shader into one
+
+        if(glGetProgrami(program, GL_VALIDATE_STATUS) == 0)
+        {
+            System.err.println(glGetProgramInfoLog(program, 1024));
+            System.exit(1);
+        }
+
 		glValidateProgram(program);
 		
 		errorCheckValue = GL11.glGetError();
@@ -132,7 +138,7 @@ public class Shader {
 			System.exit(-1);
 			}
 	}
-	
+
 	private void addProgram(String text, int type)
 	{
 		if(hasShader==true)
