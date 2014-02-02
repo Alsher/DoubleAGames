@@ -412,7 +412,7 @@ Dynamic libraries:
 
 VM Arguments:
 jvm_args: -Djava.library.path=/lib/Java/lwjgl-2.9.0/native/macosx -Dfile.encoding=US-ASCII 
-java_command: com.base.engine.MainComponent
+java_command: com.base.engine.core.MainComponent
 Launcher Type: SUN_STANDARD
 
 Environment Variables:
