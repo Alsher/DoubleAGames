@@ -4,16 +4,12 @@ package com.base.game;
 import com.base.engine.core.*;
 import com.base.engine.rendering.*;
 
-public class TestGame implements Game {
+public class TestGame extends Game {
 
     private Camera camera;
-
-    private GameObject root;
-
+    private GameObject planeObject;
     public void init()
     {
-
-        root = new GameObject();
         camera = new Camera();
 
         float fieldDepth = 10.0f;
@@ -31,12 +27,18 @@ public class TestGame implements Game {
         Material material = new Material(new Texture("voxel.png"), new Vector3f(1,1,1), 1, 8);
 
         MeshRenderer meshRenderer = new MeshRenderer(mesh, material);
-        root.addComponent(meshRenderer);
+
+        planeObject = new GameObject();
+        planeObject.addComponent(meshRenderer);
+        planeObject.getTransform().setTranslation(0, -1, 5);
+
+        getRootObject().addChild(planeObject);
 
         Transform.setProjection(70f, Window.getWidth(), Window.getHeight(), 0.1f, 1000);
         Transform.setCamera(camera);
     }
 
+    /*
     public void input()
     {
         camera.input();
@@ -54,5 +56,5 @@ public class TestGame implements Game {
     public void render()
     {
         root.render();
-    }
+    }*/
 }
