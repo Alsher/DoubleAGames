@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a7b9a140-722e-4605-8501-e0115163fa6a" name="Default" comment="" />
+    <list default="true" id="a7b9a140-722e-4605-8501-e0115163fa6a" name="Default" comment="added RenderingEngine Class&#10;">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/base/engine/rendering/RenderUtil.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/engine/rendering/BasicShader.java" afterPath="$PROJECT_DIR$/src/com/base/engine/rendering/BasicShader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/engine/core/CoreEngine.java" afterPath="$PROJECT_DIR$/src/com/base/engine/core/CoreEngine.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/engine/core/Game.java" afterPath="$PROJECT_DIR$/src/com/base/engine/core/Game.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/engine/core/GameComponent.java" afterPath="$PROJECT_DIR$/src/com/base/engine/core/GameComponent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/engine/core/GameObject.java" afterPath="$PROJECT_DIR$/src/com/base/engine/core/GameObject.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/game/MeshRenderer.java" afterPath="$PROJECT_DIR$/src/com/base/game/MeshRenderer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/engine/rendering/PhongShader.java" afterPath="$PROJECT_DIR$/src/com/base/engine/rendering/PhongShader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/base/game/TestGame.java" afterPath="$PROJECT_DIR$/src/com/base/game/TestGame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="3DGameEngine.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -72,8 +85,29 @@
       <file leaf-file-name="CoreEngine.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/base/engine/core/CoreEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="0" selection-start="1542" selection-end="1542" vertical-scroll-proportion="0.0" vertical-offset="812" max-vertical-offset="2025">
+            <state line="29" column="50" selection-start="625" selection-end="625" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1890">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicShader.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/base/engine/rendering/BasicShader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="27" column="8" selection-start="568" selection-end="568" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PhongShader.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/base/engine/rendering/PhongShader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="27" selection-start="381" selection-end="381" vertical-scroll-proportion="0.21456437" vertical-offset="0" max-vertical-offset="2325">
+              <folding>
+                <element signature="e#399#400#0" expanded="true" />
+                <element signature="e#421#422#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -81,19 +115,29 @@
       <file leaf-file-name="GameObject.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/base/engine/core/GameObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="25" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
+            <state line="53" column="47" selection-start="1134" selection-end="1134" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1005">
               <folding>
-                <element signature="e#1190#1191#0" expanded="true" />
-                <element signature="e#1222#1223#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MeshRenderer.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MeshRenderer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/base/game/MeshRenderer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="5" selection-start="509" selection-end="509" vertical-scroll-proportion="0.25886863" vertical-offset="0" max-vertical-offset="1043">
+            <state line="27" column="5" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RenderingEngine.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/base/engine/core/RenderingEngine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="5" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="930">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,7 +148,7 @@
       <file leaf-file-name="GameComponent.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/base/engine/core/GameComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="44" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+            <state line="10" column="57" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
               <folding />
             </state>
           </provider>
@@ -113,7 +157,7 @@
       <file leaf-file-name="Game.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/base/engine/core/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="17" selection-start="48" selection-end="48" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="225">
+            <state line="17" column="0" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
               <folding />
             </state>
           </provider>
@@ -122,7 +166,7 @@
       <file leaf-file-name="TestGame.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/base/game/TestGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="5" selection-start="1397" selection-end="1397" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945">
+            <state line="32" column="58" selection-start="1200" selection-end="1200" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
               <folding />
             </state>
           </provider>
@@ -131,7 +175,7 @@
       <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/base/game/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+            <state line="13" column="0" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="285">
               <folding />
             </state>
           </provider>
@@ -143,6 +187,9 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -157,21 +204,26 @@
         <option value="$PROJECT_DIR$/src/com/base/engine/core/MainComponent.java" />
         <option value="$PROJECT_DIR$/src/com/base/game/Game.java" />
         <option value="$PROJECT_DIR$/src/com/base/game/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/base/engine/core/CoreEngine.java" />
-        <option value="$PROJECT_DIR$/src/com/base/engine/core/GameObject.java" />
         <option value="$PROJECT_DIR$/src/com/base/game/TestGame.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/core/GameObject.java" />
         <option value="$PROJECT_DIR$/src/com/base/engine/core/GameComponent.java" />
         <option value="$PROJECT_DIR$/src/com/base/game/MeshRenderer.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/core/Game.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/rendering/RenderUtil.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/core/RenderingEngine.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/core/CoreEngine.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/rendering/BasicShader.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/rendering/PhongShader.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1285" />
+    <option name="x" value="1284" />
     <option name="y" value="22" />
     <option name="width" value="1275" />
     <option name="height" value="1333" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -198,6 +250,34 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3DGameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3DGameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3DGameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3DGameEngine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.base.engine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -314,42 +394,14 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3DGameEngine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3DGameEngine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3DGameEngine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3DGameEngine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.base.engine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.main.proportions" value="0.33391306" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="project.propCompiler" />
+    <property name="options.lastSelected" value="settings.github" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="MemberChooser.copyJavadoc" value="false" />
@@ -364,6 +416,7 @@
     <property name="FullScreen" value="false" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="SearchEverywhereHistory" value="" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -422,6 +475,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -447,19 +513,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -529,6 +582,23 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a7b9a140-722e-4605-8501-e0115163fa6a" name="Default" comment="" />
@@ -538,37 +608,37 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1285" y="22" width="1275" height="1333" extended-state="0" />
+    <frame x="1284" y="22" width="1275" height="1333" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32957292" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24979983" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3996777" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32957292" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24939951" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24898621" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25547445" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11845286" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.11845286" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32957292" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USERS">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
     </option>
   </component>
@@ -579,6 +649,8 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="added RenderingEngine Class&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="added RenderingEngine Class&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -612,13 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/rendering/RenderUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="33" selection-start="810" selection-end="810" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/base/engine/rendering/Shader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="67" column="43" selection-start="1451" selection-end="1451" vertical-scroll-proportion="0.078104995" vertical-offset="869" max-vertical-offset="2355">
@@ -642,13 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/core/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="17" selection-start="48" selection-end="48" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="225">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/base/game/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="0" selection-start="290" selection-end="290" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
@@ -656,42 +714,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/core/CoreEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="0" selection-start="1542" selection-end="1542" vertical-scroll-proportion="0.0" vertical-offset="812" max-vertical-offset="2025">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/core/GameObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="25" selection-start="1217" selection-end="1217" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
-          <folding>
-            <element signature="e#1190#1191#0" expanded="true" />
-            <element signature="e#1222#1223#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/base/game/TestGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="5" selection-start="1397" selection-end="1397" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="945">
+        <state line="32" column="58" selection-start="1200" selection-end="1200" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/base/engine/core/GameComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="44" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+        <state line="10" column="57" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/core/GameObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="47" selection-start="1134" selection-end="1134" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1005">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/base/game/MeshRenderer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="5" selection-start="509" selection-end="509" vertical-scroll-proportion="0.25886863" vertical-offset="0" max-vertical-offset="1043">
+        <state line="27" column="5" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/core/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="258" selection-end="258" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/core/RenderingEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="5" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="930">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/core/CoreEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="50" selection-start="625" selection-end="625" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1890">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/rendering/BasicShader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="8" selection-start="568" selection-end="568" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/rendering/PhongShader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="27" selection-start="381" selection-end="381" vertical-scroll-proportion="0.21456437" vertical-offset="0" max-vertical-offset="2325">
+          <folding>
+            <element signature="e#399#400#0" expanded="true" />
+            <element signature="e#421#422#0" expanded="true" />
           </folding>
         </state>
       </provider>
