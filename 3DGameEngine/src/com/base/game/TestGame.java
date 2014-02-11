@@ -6,11 +6,9 @@ import com.base.engine.rendering.*;
 
 public class TestGame extends Game {
 
-    private Camera camera;
     private GameObject planeObject;
     public void init()
     {
-        camera = new Camera();
 
         float fieldDepth = 10.0f;
         float fieldWidth = 10.0f;
@@ -33,28 +31,5 @@ public class TestGame extends Game {
         planeObject.getTransform().setTranslation(0, -1, 5);
 
         getRootObject().addChild(planeObject);
-
-        Transform.setProjection(70f, Window.getWidth(), Window.getHeight(), 0.1f, 1000);
-        Transform.setCamera(camera);
     }
-
-    /*
-    public void input()
-    {
-        camera.input();
-        root.input();
-    }
-
-    float temp = 0.0f;
-
-    public void update()
-    {
-        root.getTransform().setTranslation(0, -1, 5);
-        root.update();
-    }
-
-    public void render()
-    {
-        root.render();
-    }*/
 }

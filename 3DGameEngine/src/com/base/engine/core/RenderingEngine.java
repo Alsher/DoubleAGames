@@ -1,11 +1,14 @@
 package com.base.engine.core;
 
-import com.base.engine.rendering.BasicShader;
+import com.base.engine.rendering.*;
 
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL32.GL_DEPTH_CLAMP;
 
 public class RenderingEngine {
+
+    private Camera mainCamera;
+    private Vector3f ambientLight;
 
     public RenderingEngine()
     {
@@ -17,12 +20,38 @@ public class RenderingEngine {
         glEnable(GL_DEPTH_TEST);
 
         glEnable(GL_DEPTH_CLAMP);
+
+        mainCamera = new Camera((float)Math.toRadians(70.0f), (float) Window.getWidth()/(float)Window.getHeight(), 0.01f, 1000.0f);
+
+        ambientLight = new Vector3f(0.2f, 0.2f, 0.2f);
+    }
+
+    public Vector3f getAmbientLight()
+    {
+        return ambientLight;
+    }
+
+    public void input(float delta)
+    {
+        mainCamera.input(delta);
     }
 
     public void render(GameObject object)
     {
         clearScreen();
-        object.render(BasicShader.getInstance());
+
+        Shader forwardAmbient = ForwardAmbient.getInstance();
+        forwardAmbient.setRenderingEngine(this);
+
+        object.render(forwardAmbient);
+
+
+
+        /*
+        Shader shader = BasicShader.getInstance();
+        shader.setRenderingEngine(this);
+
+        object.render(BasicShader.getInstance());*/
     }
 
     private static void clearScreen()
@@ -52,5 +81,10 @@ public class RenderingEngine {
     public static String getOpenGLVersion()
     {
         return glGetString(GL_VERSION);
+    }
+
+    public Camera getMainCamera()
+    {
+        return mainCamera;
     }
 }

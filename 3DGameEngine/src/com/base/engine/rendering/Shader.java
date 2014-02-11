@@ -1,8 +1,6 @@
 package com.base.engine.rendering;
 
-import com.base.engine.core.Matrix4f;
-import com.base.engine.core.Util;
-import com.base.engine.core.Vector3f;
+import com.base.engine.core.*;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -13,6 +11,7 @@ import static org.lwjgl.opengl.GL32.GL_GEOMETRY_SHADER;
 
 public class Shader
 {
+    private RenderingEngine renderingEngine;
 	private int program;
 	private HashMap<String, Integer> uniforms;
 	
@@ -32,8 +31,8 @@ public class Shader
 	{
 		glUseProgram(program);
 	}
-	
-	public void updateUniforms(Matrix4f worldMatrix, Matrix4f projectedMatrix, Material material)
+
+	public void updateUniforms(Transform transform, Material material)
 	{
 		
 	}
@@ -81,7 +80,12 @@ public class Shader
 	{
 		addProgram(text, GL_FRAGMENT_SHADER);
 	}
-	
+
+    public void setAttribLocation(String attributeName, int location)
+    {
+        glBindAttribLocation(program, location, attributeName);
+    }
+
 	public void compileShader()
 	{
 		glLinkProgram(program);
@@ -157,4 +161,16 @@ public class Shader
 	{
 		glUniformMatrix4(uniforms.get(uniformName), true, Util.createFlippedBuffer(value));
 	}
+
+
+    public void setRenderingEngine(RenderingEngine renderingEngine)
+    {
+        this.renderingEngine = renderingEngine;
+    }
+
+    public RenderingEngine getRenderingEngine()
+    {
+        return renderingEngine;
+    }
+
 }
