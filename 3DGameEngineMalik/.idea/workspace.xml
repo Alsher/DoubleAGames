@@ -93,8 +93,30 @@
       <file leaf-file-name="RecourceLoader.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/base/engine/RecourceLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="0" selection-start="1389" selection-end="1389" vertical-scroll-proportion="0.0" vertical-offset="816" max-vertical-offset="1717">
+            <state line="76" column="83" selection-start="2727" selection-end="2727" vertical-scroll-proportion="0.0" vertical-offset="762" max-vertical-offset="1751">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Camera.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/base/engine/Camera.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="82" column="43" selection-start="2063" selection-end="2063" vertical-scroll-proportion="0.39929327" vertical-offset="1168" max-vertical-offset="1989">
+              <folding>
+                <element signature="e#2149#2150#0" expanded="true" />
+                <element signature="e#2175#2176#0" expanded="true" />
+                <element signature="e#2215#2216#0" expanded="true" />
+                <element signature="e#2245#2246#0" expanded="true" />
+                <element signature="e#2281#2282#0" expanded="true" />
+                <element signature="e#2311#2312#0" expanded="true" />
+                <element signature="e#2359#2360#0" expanded="true" />
+                <element signature="e#2397#2398#0" expanded="true" />
+                <element signature="e#2428#2429#0" expanded="true" />
+                <element signature="e#2453#2454#0" expanded="true" />
+                <element signature="e#2491#2492#0" expanded="true" />
+                <element signature="e#2519#2520#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,29 +148,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/base/engine/Game.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="10" selection-start="1784" selection-end="1784" vertical-scroll-proportion="0.0" vertical-offset="388" max-vertical-offset="1275">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Transform.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/base/engine/Transform.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="82" selection-start="911" selection-end="911" vertical-scroll-proportion="0.08581236" vertical-offset="418" max-vertical-offset="1292">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Matrix4f.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/base/engine/Matrix4f.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="80" column="133" selection-start="3828" selection-end="3828" vertical-scroll-proportion="0.0" vertical-offset="1360" max-vertical-offset="2040">
+            <state line="95" column="32" selection-start="4203" selection-end="4203" vertical-scroll-proportion="0.0" vertical-offset="1198" max-vertical-offset="2295">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/base/engine/Game.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="44" column="23" selection-start="1308" selection-end="1308" vertical-scroll-proportion="0.0" vertical-offset="454" max-vertical-offset="1377">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Transform.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/base/engine/Transform.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="39" column="143" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.0" vertical-offset="479" max-vertical-offset="1479">
+              <folding>
+                <element signature="e#1643#1644#0" expanded="true" />
+                <element signature="e#1677#1678#0" expanded="true" />
+                <element signature="e#2724#2725#0" expanded="true" />
+                <element signature="e#2753#2754#0" expanded="true" />
+                <element signature="e#2803#2804#0" expanded="true" />
+                <element signature="e#2844#2845#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -176,7 +205,6 @@
         <option value="$PROJECT_DIR$/src/com/base/engine/Time.java" />
         <option value="$PROJECT_DIR$/src/com/base/engine/Window.java" />
         <option value="$PROJECT_DIR$/src/com/base/engine/Vector2f.java" />
-        <option value="$PROJECT_DIR$/src/com/base/engine/Vector3f.java" />
         <option value="$PROJECT_DIR$/src/com/base/engine/Quaternion.java" />
         <option value="$PROJECT_DIR$/src/com/base/engine/Input.java" />
         <option value="$PROJECT_DIR$/src/com/base/engine/Vertex.java" />
@@ -184,11 +212,13 @@
         <option value="$PROJECT_DIR$/src/com/base/engine/MainComponent.java" />
         <option value="$PROJECT_DIR$/src/com/base/engine/Shader.java" />
         <option value="$PROJECT_DIR$/src/com/base/engine/Mesh.java" />
-        <option value="$PROJECT_DIR$/src/com/base/engine/RecourceLoader.java" />
         <option value="$PROJECT_DIR$/src/com/base/engine/Util.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/RecourceLoader.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/Vector3f.java" />
         <option value="$PROJECT_DIR$/src/com/base/engine/Matrix4f.java" />
         <option value="$PROJECT_DIR$/src/com/base/engine/Transform.java" />
         <option value="$PROJECT_DIR$/src/com/base/engine/Game.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/Camera.java" />
       </list>
     </option>
   </component>
@@ -210,7 +240,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -221,84 +251,7 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3DGameEngineMalik" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slick" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3DGameEngineMalik" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lwjgl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3DGameEngineMalik" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3DGameEngineMalik" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3DGameEngineMalik" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3DGameEngineMalik" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3DGameEngineMalik" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="engine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="GoToClass.includeLibraries" value="false" />
@@ -454,7 +407,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="960" height="1040" extended-state="0" />
+    <frame x="0" y="0" width="960" height="1040" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -467,17 +420,17 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32012847" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1779661" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3436831" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3436831" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32012847" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -528,11 +481,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Vector2f.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="770" selection-end="952" vertical-scroll-proportion="0.0" vertical-offset="578" max-vertical-offset="1360" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/base/engine/Vector3f.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="33" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="1598">
@@ -745,13 +693,6 @@
         <state line="31" column="24" selection-start="797" selection-end="797" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="884" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Vector3f.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="33" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1598">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/base/engine/Input.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="202" column="1" selection-start="10427" selection-end="10427" vertical-scroll-proportion="0.8658399" vertical-offset="2666" max-vertical-offset="3553" />
@@ -809,29 +750,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/base/engine/RecourceLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="0" selection-start="1389" selection-end="1389" vertical-scroll-proportion="0.0" vertical-offset="762" max-vertical-offset="1649">
+        <state line="76" column="83" selection-start="2727" selection-end="2727" vertical-scroll-proportion="0.0" vertical-offset="762" max-vertical-offset="1751">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Vector3f.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="19" selection-start="1481" selection-end="1481" vertical-scroll-proportion="0.0" vertical-offset="527" max-vertical-offset="1683">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/base/engine/Matrix4f.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="133" selection-start="3828" selection-end="3828" vertical-scroll-proportion="0.0" vertical-offset="656" max-vertical-offset="1972">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="10" selection-start="1784" selection-end="1784" vertical-scroll-proportion="0.0" vertical-offset="388" max-vertical-offset="1275">
+        <state line="95" column="32" selection-start="4203" selection-end="4203" vertical-scroll-proportion="0.0" vertical-offset="1198" max-vertical-offset="2295">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/base/engine/Transform.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="82" selection-start="911" selection-end="911" vertical-scroll-proportion="0.08581236" vertical-offset="418" max-vertical-offset="1292">
+        <state line="39" column="143" selection-start="1494" selection-end="1494" vertical-scroll-proportion="0.0" vertical-offset="479" max-vertical-offset="1479">
+          <folding>
+            <element signature="e#1643#1644#0" expanded="true" />
+            <element signature="e#1677#1678#0" expanded="true" />
+            <element signature="e#2724#2725#0" expanded="true" />
+            <element signature="e#2753#2754#0" expanded="true" />
+            <element signature="e#2803#2804#0" expanded="true" />
+            <element signature="e#2844#2845#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="23" selection-start="1308" selection-end="1308" vertical-scroll-proportion="0.0" vertical-offset="454" max-vertical-offset="1377">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Camera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="43" selection-start="2063" selection-end="2063" vertical-scroll-proportion="0.39929327" vertical-offset="1168" max-vertical-offset="1989">
+          <folding>
+            <element signature="e#2149#2150#0" expanded="true" />
+            <element signature="e#2175#2176#0" expanded="true" />
+            <element signature="e#2215#2216#0" expanded="true" />
+            <element signature="e#2245#2246#0" expanded="true" />
+            <element signature="e#2281#2282#0" expanded="true" />
+            <element signature="e#2311#2312#0" expanded="true" />
+            <element signature="e#2359#2360#0" expanded="true" />
+            <element signature="e#2397#2398#0" expanded="true" />
+            <element signature="e#2428#2429#0" expanded="true" />
+            <element signature="e#2453#2454#0" expanded="true" />
+            <element signature="e#2491#2492#0" expanded="true" />
+            <element signature="e#2519#2520#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

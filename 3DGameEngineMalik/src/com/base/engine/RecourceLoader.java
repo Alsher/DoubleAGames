@@ -1,5 +1,6 @@
 package com.base.engine;
 
+import com.sun.java.swing.plaf.windows.resources.windows_es;
 import com.sun.xml.internal.fastinfoset.util.StringArray;
 
 import java.io.BufferedReader;
@@ -66,10 +67,16 @@ public class RecourceLoader {
                 }
                 else if(tokens[0].equals("f"))
                 {
-                    indices.add(Integer.parseInt(tokens[1]) - 1);
-                    indices.add(Integer.parseInt(tokens[2]) - 1);
-                    indices.add(Integer.parseInt(tokens[3]) - 1);
+                    indices.add(Integer.parseInt(tokens[1].split("/")[0]) - 1);
+                    indices.add(Integer.parseInt(tokens[2].split("/")[0]) - 1);
+                    indices.add(Integer.parseInt(tokens[3].split("/")[0]) - 1);
 
+                    if(tokens.length > 4)
+                    {
+                        indices.add(Integer.parseInt(tokens[1].split("/")[0]) - 1);
+                        indices.add(Integer.parseInt(tokens[2].split("/")[0]) - 1);
+                        indices.add(Integer.parseInt(tokens[3].split("/")[0]) - 1);
+                    }
                 }
             }
 
