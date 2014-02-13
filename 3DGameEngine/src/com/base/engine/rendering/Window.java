@@ -22,7 +22,7 @@ public class Window
             Display.setDisplayMode(new DisplayMode(width, height));
             Display.setTitle(title);
             Display.create(pixelFormat, contextAtrributes);
-            //Display.setVSyncEnabled(true);
+            Display.setVSyncEnabled(true);
 
             Keyboard.create();
             Mouse.create();

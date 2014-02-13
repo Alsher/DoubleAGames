@@ -9,6 +9,8 @@ public class RenderingEngine {
 
     private Camera mainCamera;
     private Vector3f ambientLight;
+    private DirectionalLight directionalLight;
+    private DirectionalLight directionalLight2;
 
     public RenderingEngine()
     {
@@ -24,11 +26,8 @@ public class RenderingEngine {
         mainCamera = new Camera((float)Math.toRadians(70.0f), (float) Window.getWidth()/(float)Window.getHeight(), 0.01f, 1000.0f);
 
         ambientLight = new Vector3f(0.2f, 0.2f, 0.2f);
-    }
-
-    public Vector3f getAmbientLight()
-    {
-        return ambientLight;
+        directionalLight = new DirectionalLight(new BaseLight(new Vector3f(0, 0, 1), 0.4f), new Vector3f(1, 1, 1));
+        directionalLight2 = new DirectionalLight(new BaseLight(new Vector3f(1, 0, 0), 0.4f), new Vector3f(-1, 1, -1));
     }
 
     public void input(float delta)
@@ -41,23 +40,49 @@ public class RenderingEngine {
         clearScreen();
 
         Shader forwardAmbient = ForwardAmbient.getInstance();
+        Shader forwardDirectional = ForwardDirectional.getInstance();
         forwardAmbient.setRenderingEngine(this);
+        forwardDirectional.setRenderingEngine(this);
 
         object.render(forwardAmbient);
 
+        glEnable(GL_BLEND);
+        /** Enable **/
+        glBlendFunc(GL_ONE, GL_ONE); //existing * 1, new * 1
+        glDepthMask(false); //disable writing to depth buffer
+        glDepthFunc(GL_EQUAL); //only add new pixel if same depth
 
+        object.render(forwardDirectional);
 
-        /*
-        Shader shader = BasicShader.getInstance();
-        shader.setRenderingEngine(this);
+        DirectionalLight temp = directionalLight;
+        directionalLight = directionalLight2;
+        directionalLight2 = temp;
 
-        object.render(BasicShader.getInstance());*/
+        object.render(forwardDirectional);
+
+        temp = directionalLight;
+        directionalLight = directionalLight2;
+        directionalLight2 = temp;
+
+        /** Disable **/
+        glDepthFunc(GL_LESS); //only add new pixel if less depth
+        glDepthMask(true); //enable writing to depth buffer
+        glDisable(GL_BLEND);
     }
 
     private static void clearScreen()
     {
         //TODO: Stencil Buffer
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    }
+
+    public Vector3f getAmbientLight()
+    {
+        return ambientLight;
+    }
+    public DirectionalLight getDirectionalLight()
+    {
+        return directionalLight;
     }
 
     private static void setTextures(boolean enabled)
