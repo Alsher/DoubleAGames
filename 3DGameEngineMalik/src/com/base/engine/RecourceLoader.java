@@ -16,7 +16,7 @@ public class RecourceLoader {
         BufferedReader shaderReader = null;
 
         try{
-            shaderReader = new BufferedReader(new FileReader("./res/shaders/" + fileName));
+            shaderReader = new BufferedReader(new FileReader("C:\\Users\\Malik\\Documents\\IntelliJ IDEA\\3DEngine\\res\\shaders\\" + fileName));
             String line;
             while ((line = shaderReader.readLine()) != null)
             {

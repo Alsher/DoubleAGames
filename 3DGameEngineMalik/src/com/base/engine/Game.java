@@ -10,10 +10,12 @@ public class Game {
     private Mesh mesh;
     private Shader shader;
     private Transform transform;
+    private Camera camera;
 
     public Game(){
         mesh = new Mesh();
         shader = new Shader();
+        camera = new Camera();
 
         Vertex[] vertices = new Vertex[] {new Vertex(new Vector3f(-1,-1, 0)),
                                       new Vertex(new Vector3f(-1, 1, 0)),
@@ -27,8 +29,10 @@ public class Game {
 
         mesh.addVertices(vertices, indices);
 
-        transform = new Transform();
+
         transform.setProjection(70f, Window.getWidth(), Window.getheight(), 0.1f, 1000);
+        Transform.setCamera(camera);
+        transform = new Transform();
 
         shader.addVertexShader(RecourceLoader.loadShader("basicVertex.vs"));
         shader.addFragmentShader(RecourceLoader.loadShader("basicFragment.fs"));
@@ -38,15 +42,17 @@ public class Game {
     }
 
     public void input(){
-        if(Input.getKeyDown(Keyboard.KEY_UP))
-            System.out.println("up");
-        if(Input.getKeyUp(Keyboard.KEY_UP))
-            System.out.println("released up");
+        camera.input();
 
-        if(Input.getMouseDown(1))
-            System.out.println("right click");
-        if(Input.getMouseUp(1))
-            System.out.println("released right click");
+     //   if(Input.getKeyDown(Keyboard.KEY_UP))
+     //       System.out.println("up");
+     //  if(Input.getKeyUp(Keyboard.KEY_UP))
+     //       System.out.println("released up");
+     //
+     //   if(Input.getMouseDown(1))
+     //       System.out.println("right click");
+     //   if(Input.getMouseUp(1))
+     //       System.out.println("released right click");
     }
 
     float temp = 0.0f;
