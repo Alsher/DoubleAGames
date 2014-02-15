@@ -11,6 +11,11 @@ public class RenderingEngine {
     private Vector3f ambientLight;
     private DirectionalLight directionalLight;
     private DirectionalLight directionalLight2;
+    private PointLight pointLight;
+    private SpotLight spotLight;
+
+    private PointLight[] pointLightList;
+    private SpotLight[] spotLightList;
 
     public RenderingEngine()
     {
@@ -28,7 +33,42 @@ public class RenderingEngine {
         ambientLight = new Vector3f(0.2f, 0.2f, 0.2f);
         directionalLight = new DirectionalLight(new BaseLight(new Vector3f(0, 0, 1), 0.4f), new Vector3f(1, 1, 1));
         directionalLight2 = new DirectionalLight(new BaseLight(new Vector3f(1, 0, 0), 0.4f), new Vector3f(-1, 1, -1));
+
+        int lightFieldWidth = 5;
+        int lightFieldDepth = 5;
+
+        float lightFieldStartX = 0;
+        float lightFieldStartY = 0;
+        float lightFieldStepX = 7;
+        float lightFieldStepY = 7;
+
+        pointLightList = new PointLight[lightFieldWidth * lightFieldDepth];
+        spotLightList = new SpotLight[lightFieldWidth * lightFieldDepth];
+
+        for(int i = 0; i < lightFieldWidth; i++)
+        {
+            for(int j = 0; j < lightFieldDepth; j++)
+            {
+                pointLightList[i * lightFieldWidth + j] = new PointLight(new BaseLight(new Vector3f(0,1,0), 0.4f),
+                                                          new Attenuation(0,0,0.5f),
+                        						          new Vector3f(lightFieldStartX + lightFieldStepX * i,0,lightFieldStartY + lightFieldStepY * j), 100);
+            }
+        }
+        pointLight = pointLightList[0];
+
+        for(int i = 0; i < lightFieldWidth; i++)
+        {
+            for(int j = 0; j < lightFieldDepth; j++)
+            {
+                spotLightList[i * lightFieldWidth + j] = new SpotLight( new PointLight(new BaseLight(new Vector3f(0,1,0), 0.4f),
+                                                                                       new Attenuation(0,0,0.1f),
+                                                                                       new Vector3f(lightFieldStartX + lightFieldStepX * i,0,lightFieldStartY + lightFieldStepY * j), 100),
+                                                                        new Vector3f(1,0,0), 0.4f);
+            }
+        }
+        spotLight = spotLightList[0];
     }
+
 
     public void input(float delta)
     {
@@ -41,8 +81,12 @@ public class RenderingEngine {
 
         Shader forwardAmbient = ForwardAmbient.getInstance();
         Shader forwardDirectional = ForwardDirectional.getInstance();
+        Shader forwardPoint = ForwardPoint.getInstance();
+        Shader forwardSpot = ForwardSpot.getInstance();
         forwardAmbient.setRenderingEngine(this);
         forwardDirectional.setRenderingEngine(this);
+        forwardPoint.setRenderingEngine(this);
+        forwardSpot.setRenderingEngine(this);
 
         object.render(forwardAmbient);
 
@@ -52,17 +96,29 @@ public class RenderingEngine {
         glDepthMask(false); //disable writing to depth buffer
         glDepthFunc(GL_EQUAL); //only add new pixel if same depth
 
-        object.render(forwardDirectional);
+        //object.render(forwardDirectional);
 
         DirectionalLight temp = directionalLight;
         directionalLight = directionalLight2;
         directionalLight2 = temp;
 
-        object.render(forwardDirectional);
+        //object.render(forwardDirectional);
 
         temp = directionalLight;
         directionalLight = directionalLight2;
         directionalLight2 = temp;
+
+        for(int i = 0; i < pointLightList.length; i++)
+        {
+            pointLight = pointLightList[i];
+            object.render(forwardPoint);
+        }
+
+        for(int i = 0; i < spotLightList.length; i++)
+        {
+            spotLight = spotLightList[i];
+            object.render(forwardSpot);
+        }
 
         /** Disable **/
         glDepthFunc(GL_LESS); //only add new pixel if less depth
@@ -83,6 +139,14 @@ public class RenderingEngine {
     public DirectionalLight getDirectionalLight()
     {
         return directionalLight;
+    }
+    public PointLight getPointLight()
+    {
+        return pointLight;
+    }
+    public SpotLight getSpotLight()
+    {
+        return spotLight;
     }
 
     private static void setTextures(boolean enabled)
