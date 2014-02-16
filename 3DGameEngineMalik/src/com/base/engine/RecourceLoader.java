@@ -2,25 +2,47 @@ package com.base.engine;
 
 import com.sun.java.swing.plaf.windows.resources.windows_es;
 import com.sun.xml.internal.fastinfoset.util.StringArray;
+import org.newdawn.slick.opengl.TextureLoader;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.util.ArrayList;
 
 /**
  * Created by Malik on 02.02.14.
  */
-public class RecourceLoader {
+public class RecourceLoader
+{
+    public static Texture loadTexture(String fileName){
+
+        String[] splitArray = fileName.split("\\.");
+        String ext = splitArray[splitArray.length - 1];
+
+            try{
+                int id = TextureLoader.getTexture(ext, new FileInputStream(new File("./res/textures/" + fileName))).getTextureID();
+
+                return new Texture(id);
+            }
+            catch (Exception e){
+                e.printStackTrace();
+                System.exit(1);
+            }
+
+            return null;
+        }
+
     public static String loadShader(String fileName){
         StringBuilder shaderSource = new StringBuilder();
         BufferedReader shaderReader = null;
 
         try{
-            shaderReader = new BufferedReader(new FileReader("C:\\Users\\Malik\\Documents\\IntelliJ IDEA\\3DEngine\\res\\shaders\\" + fileName));
+            shaderReader = new BufferedReader(new FileReader("./res/shaders/" + fileName));
             String line;
             while ((line = shaderReader.readLine()) != null)
             {
-                shaderSource.append(line).append("/n");
+                shaderSource.append(line).append("\n");
             }
 
             shaderReader.close();
@@ -33,7 +55,7 @@ public class RecourceLoader {
         return shaderSource.toString();
     }
     public static Mesh loadMesh(String fileName){
-        String[] splitArray = fileName.split("//.");
+        String[] splitArray = fileName.split("\\.");
         String ext = splitArray[splitArray.length - 1];
 
         if(!ext.equals("obj"))
