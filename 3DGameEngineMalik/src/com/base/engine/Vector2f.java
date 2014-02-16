@@ -17,12 +17,13 @@ public class Vector2f {
     public float dot(Vector2f r){
         return x * r.getX() + y * r.getY();
     }
-    public Vector2f normalize(){
+    public Vector2f normalized(){
         float lenght = lenght();
-        x /= lenght;
-        y /= lenght;
 
-        return this;
+        return new Vector2f(x / lenght, y /lenght);
+    }
+    public Vector2f abs(){
+        return new Vector2f(Math.abs(x), Math.abs(y));
     }
     public Vector2f rotate(float angle){
 
