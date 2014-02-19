@@ -2,6 +2,7 @@ package com.base.engine.rendering;
 
 
 
+import com.base.engine.components.DirectionalLight;
 import com.base.engine.core.Matrix4f;
 import com.base.engine.core.Transform;
 
@@ -48,7 +49,7 @@ public class ForwardDirectional extends Shader
         setUniformf("specularIntensity", material.getSpecularIntensity());
         setUniformf("specularPower", material.getSpecularPower());
 
-        setUniform("directionalLight", getRenderingEngine().getDirectionalLight());
+        setUniform("directionalLight", getRenderingEngine().getActiveDirectionalLight());
 
         setUniform("eyePos", getRenderingEngine().getMainCamera().getPos());
 
