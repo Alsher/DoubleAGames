@@ -17,7 +17,7 @@ public class Game {
     public Game(){
         mesh = new Mesh();
         material = new Material(RecourceLoader.loadTexture("test.png"), new Vector3f(0,1,1));
-        shader = new Basicshader();
+        shader = new PhongShader().getIntance();
         camera = new Camera();
 
         Vertex[] vertices = new Vertex[] {new Vertex(new Vector3f(-1,-1, 0), new Vector2f(0,0)),
@@ -36,6 +36,8 @@ public class Game {
         Transform.setProjection(70f, Window.getWidth(), Window.getHeight(), 0.1f, 1000);
         Transform.setCamera(camera);
         transform = new Transform();
+
+        PhongShader.setAmbientLight(new Vector3f(1,1,1));
     }
 
     public void input(){

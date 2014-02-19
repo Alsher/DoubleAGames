@@ -6,6 +6,11 @@ import sun.net.www.content.audio.basic;
  * Created by Malik on 16.02.14.
  */
 public class Basicshader extends Shader{
+    private static final Basicshader intance = new Basicshader();
+
+    public static Basicshader getIntance(){
+        return  intance;
+    }
     public Basicshader(){
         super();
 
