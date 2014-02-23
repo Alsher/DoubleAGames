@@ -65,7 +65,7 @@ public class Camera
                 rotateY(-deltaPos.getY() * sensitivity);
 
             if (rotY || rotX)
-                Input.getMousePosition(new Vector2f(Window.getWidth()/2, Window.getHeight()/2));
+                Input.setMousePosition(new Vector2f(Window.getWidth()/2, Window.getHeight()/2));
         }
 
     //    if(Input.getKey(Input.KEY_UP))
