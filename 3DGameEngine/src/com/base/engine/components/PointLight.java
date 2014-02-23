@@ -1,30 +1,36 @@
 package com.base.engine.components;
 
-import com.base.engine.core.RenderingEngine;
 import com.base.engine.core.Vector3f;
-import com.base.engine.rendering.Attenuation;
-import com.base.engine.rendering.BaseLight;
+import com.base.engine.rendering.ForwardPoint;
 
-public class PointLight extends GameComponent
+public class PointLight extends BaseLight
 {
 	private BaseLight baseLight;
-	private Attenuation atten;
-	private Vector3f position;
+
+
+
+    private float constant;
+    private float linear;
+    private float exponent;
+
+
+
+    private Vector3f position;
 	private float range;
 	
-	public PointLight(BaseLight baseLight, Attenuation atten, Vector3f position, float range)
+	public PointLight(Vector3f color, float intensity, float constant, float linear, float exponent, Vector3f position, float range)
 	{
-		this.baseLight = baseLight;
-		this.atten = atten;
+        super(color, intensity);
+
+        this.constant = constant;
+        this.linear = linear;
+        this.exponent = exponent;
+
 		this.position = position;
 		this.range = range;
-	}
 
-    @Override
-    public void addToRenderingEngine(RenderingEngine renderingEngine)
-    {
-        renderingEngine.addPointLight(this);
-    }
+        setShader(ForwardPoint.getInstance());
+	}
 	
 	public BaseLight getBaseLight()
 	{
@@ -34,15 +40,29 @@ public class PointLight extends GameComponent
 	{
 		this.baseLight = baseLight;
 	}
-	public Attenuation getAtten()
-	{
-		return atten;
-	}
-	public void setAtten(Attenuation atten)
-	{
-		this.atten = atten;
-	}
-	public Vector3f getPosition()
+
+    public float getConstant() {
+        return constant;
+    }
+    public void setConstant(float constant) {
+        this.constant = constant;
+    }
+
+    public float getExponent() {
+        return exponent;
+    }
+    public void setExponent(float exponent) {
+        this.exponent = exponent;
+    }
+
+    public float getLinear() {
+        return linear;
+    }
+    public void setLinear(float linear) {
+        this.linear = linear;
+    }
+
+    public Vector3f getPosition()
 	{
 		return position;
 	}
