@@ -1,7 +1,7 @@
 package com.base.engine;
 
 import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.opengl.GL30.*;
+import static org.lwjgl.opengl.GL32.*;
 /**
  * Created by Malik on 24.01.14.
  */
@@ -32,10 +32,9 @@ public class RenderUtil {
         glEnable(GL_CULL_FACE);
         glEnable(GL_DEPTH_TEST);
 
-        //Todo depth clamp
+        glEnable(GL_DEPTH_CLAMP);
 
         glEnable(GL_TEXTURE_2D);
-        glEnable(GL_FRAMEBUFFER_SRGB);
     }
     public static String getOpenGLVersion(){
         return glGetString(GL_VERSION);
