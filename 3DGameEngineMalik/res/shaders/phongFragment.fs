@@ -32,7 +32,7 @@ struct PointLight
     BaseLight base;
     Attenuation atten;
     vec3 position;
-}
+};
 
 uniform vec3 baseColor;
 uniform vec3 eyePos;
@@ -43,7 +43,7 @@ uniform float specularIntensity;
 uniform float specularPower;
 
 uniform DirectionalLight directionalLight;
-uniform PointLight pointLight[MAX_POINT_LIGHTS];
+uniform PointLight pointLights[MAX_POINT_LIGHTS];
 
 vec4 calcLight(BaseLight base, vec3 direction, vec3 normal)
 {
@@ -77,11 +77,12 @@ vec4 calcDirectionalLight(DirectionalLight directionalLight, vec3 normal)
 }
 
 
-vec4 calcPointLight (PointLight pointLight, vec3 normal)
+vec4 calcPointLight(PointLight pointLight, vec3 normal)
 {
     vec3 lightDirection = worldPos0 - pointLight.position;
-    float distanceToPoint = lenght(lightDirection);
-    lightDirection = normalized(lightDirection);
+    float distanceToPoint = length(lightDirection);
+
+    lightDirection = normalize(lightDirection);
 
     vec4 color = calcLight(pointLight.base, lightDirection, normal);
 
@@ -90,7 +91,7 @@ vec4 calcPointLight (PointLight pointLight, vec3 normal)
                          pointLight.atten.exponent * distanceToPoint * distanceToPoint +
                          0.0001;
 
-    return color / attenutation;
+    return color / attenuation;
 }
 
 void  main()
@@ -107,7 +108,7 @@ void  main()
 	totalLight += calcDirectionalLight(directionalLight, normal);
 
 	for(int i = 0; i < MAX_POINT_LIGHTS; i++)
-	    totalLight += calcPointLight(pointLight[i], normal);
+	    totalLight += calcPointLight(pointLights[i], normal);
 
 
 	fragColor = color * totalLight;

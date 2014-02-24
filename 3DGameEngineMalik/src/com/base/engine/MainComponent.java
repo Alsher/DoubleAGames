@@ -1,8 +1,6 @@
 package com.base.engine;
 
 
-import org.lwjgl.opengl.Display;
-
 public class MainComponent {
 
     public static final int WIDTH = 800;
@@ -14,6 +12,7 @@ public class MainComponent {
     private Game game;
 
     public MainComponent(){
+
         System.out.println(RenderUtil.getOpenGLVersion());
         RenderUtil.initGraphics();
         isRunning = false;
@@ -43,7 +42,7 @@ public class MainComponent {
         final double frameTime = 1.0 / FRAME_CAP;
 
         long lastTime = Time.getTime();
-        long unprocessedTime = 0;
+        double unprocessedTime = 0;
 
 
         while(isRunning){
@@ -57,7 +56,6 @@ public class MainComponent {
             frameCounter += passedTime;
 
             while(unprocessedTime > frameTime){
-
                 render = true;
 
                 unprocessedTime -= frameTime;
@@ -66,9 +64,9 @@ public class MainComponent {
                     stop();
 
                 Time.setDelta(frameTime);
+                game.input();
                 Input.update();
 
-                game.input();
                 game.update();
 
                 if(frameCounter >= Time.SECOND){
@@ -112,6 +110,7 @@ public class MainComponent {
         Window.createWindow(WIDTH, HEIGHT, TITLE);
 
         MainComponent game = new MainComponent();
+
         game.start();
     }
 }

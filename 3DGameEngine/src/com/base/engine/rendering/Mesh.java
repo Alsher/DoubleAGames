@@ -122,8 +122,8 @@ public class Mesh { //storing  on graphics card of some data of some length
         for(int i = 0; i < indices.length; i += 3)
         {
             int i0 = indices[i];
-            int i1 = indices[i+1];
-            int i2 = indices[i+2];
+            int i1 = indices[i + 1];
+            int i2 = indices[i + 2];
 
             Vector3f v1 = vertices[i1].getPos().sub(vertices[i0].getPos());
             Vector3f v2 = vertices[i2].getPos().sub(vertices[i0].getPos());
@@ -136,9 +136,7 @@ public class Mesh { //storing  on graphics card of some data of some length
         }
 
         for(int i = 0; i < vertices.length; i++)
-        {
             vertices[i].setNormal(vertices[i].getNormal().normalized());
-        }
     }
 
 

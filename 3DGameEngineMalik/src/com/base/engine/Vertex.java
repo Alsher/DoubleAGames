@@ -32,11 +32,11 @@ public class Vertex {
         this.pos = pos;
     }
 
-    public Vector2f getTextCoord() {
+    public Vector2f getTexCoord() {
         return texCoord;
     }
 
-    public void setTextCoord(Vector2f textCoord) {
+    public void setTexCoord(Vector2f textCoord) {
         this.texCoord = textCoord;
     }
 

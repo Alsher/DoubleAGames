@@ -88,9 +88,16 @@ public class Shader
 
 	public void compileShader()
 	{
-		glLinkProgram(program);
-		
-		glValidateProgram(program);
+        glLinkProgram(program);
+
+        if(glGetProgrami(program, GL_LINK_STATUS) == 0)
+        {
+            System.err.println("ERROR: shader program LINK_STATUS failed");
+            System.err.println(glGetProgramInfoLog(program, 1024));
+            System.exit(1);
+        }
+
+        glValidateProgram(program);
 	}
 	
 	private void addProgram(String text, int type)

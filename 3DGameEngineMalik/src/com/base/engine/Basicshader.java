@@ -1,21 +1,19 @@
 package com.base.engine;
 
-import sun.net.www.content.audio.basic;
-
 /**
  * Created by Malik on 16.02.14.
  */
-public class Basicshader extends Shader{
-    private static final Basicshader intance = new Basicshader();
+public class BasicShader extends Shader{
+    private static final BasicShader instance = new BasicShader();
 
-    public static Basicshader getIntance(){
-        return  intance;
+    public static BasicShader getInstance(){
+        return  instance;
     }
-    public Basicshader(){
+    public BasicShader(){
         super();
 
-        addVertexShader(RecourceLoader.loadShader("basicVertex.vs"));
-        addFragmentShader(RecourceLoader.loadShader("basicFragment.fs"));
+        addVertexShader(ResourceLoader.loadShader("basicVertex.vs"));
+        addFragmentShader(ResourceLoader.loadShader("basicFragment.fs"));
         compileShader();
 
         addUniform("transform");

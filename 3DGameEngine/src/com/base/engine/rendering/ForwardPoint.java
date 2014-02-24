@@ -23,7 +23,6 @@ public class ForwardPoint extends Shader
         compileShader();
 
 
-
         addUniform("MVP");
         addUniform("model");
 

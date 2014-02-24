@@ -7,10 +7,10 @@ public class PhongShader extends Shader
 {
     private static final int MAX_POINT_LIGHTS = 4;
 
-    private static final PhongShader intance = new PhongShader();
+    private static final PhongShader instance = new PhongShader();
 
-    public static PhongShader getIntance(){
-        return  intance;
+    public static PhongShader getInstance(){
+        return instance;
     }
 
     private static Vector3f ambientLight = new Vector3f(0.1f,0.1f,0.1f);
@@ -20,8 +20,8 @@ public class PhongShader extends Shader
     public PhongShader(){
         super();
 
-        addVertexShader(RecourceLoader.loadShader("phongVertex.vs"));
-        addFragmentShader(RecourceLoader.loadShader("phongFragment.fs"));
+        addVertexShader(ResourceLoader.loadShader("phongVertex.vs"));
+        addFragmentShader(ResourceLoader.loadShader("phongFragment.fs"));
         compileShader();
 
         addUniform("transform");
@@ -37,7 +37,7 @@ public class PhongShader extends Shader
         addUniform("directionalLight.base.intensity");
         addUniform("directionalLight.direction");
 
-        for(int i = 0, i < MAX_POINT_LIGHTS; i++)
+        for(int i = 0; i < MAX_POINT_LIGHTS; i++)
             {
                 addUniform("pointLights[" + i + "].base.color");
                 addUniform("pointLights[" + i + "].base.intensity");

@@ -3,8 +3,10 @@ package com.base.engine;
 import org.lwjgl.LWJGLException;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
+import org.lwjgl.opengl.ContextAttribs;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
+import org.lwjgl.opengl.PixelFormat;
 
 /**
  * Created by MadMoney
@@ -13,11 +15,23 @@ public class Window
 {
     public static void createWindow(int width, int height, String title)
     {
-        Display.setTitle(title);
         try
         {
+            /*
             Display.setDisplayMode(new DisplayMode(width, height));
+            Display.setTitle(title);
             Display.create();
+*/
+            PixelFormat pixelFormat = new PixelFormat();
+            ContextAttribs contextAtrributes = new ContextAttribs(3, 2)
+                    .withForwardCompatible(true)
+                    .withProfileCore(true);
+
+            Display.setDisplayMode(new DisplayMode(width, height));
+            Display.setTitle(title);
+            Display.create(pixelFormat, contextAtrributes);
+            Display.setVSyncEnabled(true);
+
             Keyboard.create();
             Mouse.create();
         }

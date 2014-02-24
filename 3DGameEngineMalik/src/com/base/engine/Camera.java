@@ -52,19 +52,19 @@ public class Camera
             move(getRight(), movAmt);
 
 
-        if (mouseLocked)
+        if(mouseLocked)
         {
             Vector2f deltaPos = Input.getMousePosition().sub(centerPosition);
 
-            boolean rotX = deltaPos.getX() != 0;
-            boolean rotY = deltaPos.getY() != 0;
+            boolean rotY = deltaPos.getX() != 0;
+            boolean rotX = deltaPos.getY() != 0;
 
-            if (rotY)
+            if(rotY)
                 rotateY(deltaPos.getX() * sensitivity);
-            if (rotX)
-                rotateY(-deltaPos.getY() * sensitivity);
+            if(rotX)
+                rotateX(-deltaPos.getY() * sensitivity);
 
-            if (rotY || rotX)
+            if(rotY || rotX)
                 Input.setMousePosition(new Vector2f(Window.getWidth()/2, Window.getHeight()/2));
         }
 
@@ -82,18 +82,20 @@ public class Camera
         pos = pos.add(dir.mul(amt));
     }
 
-    public void rotateY(float angle){
+    public void rotateY(float angle)
+    {
         Vector3f Haxis = yAxis.cross(forward).normalized();
 
-        forward.rotate(angle, yAxis).normalized();
+        forward = forward.rotate(angle, yAxis).normalized();
 
         up = forward.cross(Haxis).normalized();
     }
 
-    public void rotateX(float angle){
+    public void rotateX(float angle)
+    {
         Vector3f Haxis = yAxis.cross(forward).normalized();
 
-        forward.rotate(angle, Haxis).normalized();
+        forward = forward.rotate(angle, Haxis).normalized();
 
         up = forward.cross(Haxis).normalized();
     }

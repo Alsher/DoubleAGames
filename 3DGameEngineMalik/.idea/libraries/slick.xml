@@ -1,8 +1,7 @@
 <component name="libraryTable">
   <library name="slick">
     <CLASSES>
-      <root url="jar://C:/Program Files (x86)/Java/Slick Util/lwjgl.jar!/" />
-      <root url="jar://C:/Program Files (x86)/Java/Slick Util/slick-util.jar!/" />
+      <root url="jar:///lib/Java/slick-util/slick-util.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

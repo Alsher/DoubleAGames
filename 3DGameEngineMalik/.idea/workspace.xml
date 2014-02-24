@@ -55,23 +55,7 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/com/base/engine/Util.java" line="2" class="Util.java" package="">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -81,46 +65,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Basicshader.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/base/engine/Basicshader.java">
+      <file leaf-file-name="BasicShader.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/base/engine/BasicShader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="1" selection-start="150" selection-end="917" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="663">
+            <state line="25" column="20" selection-start="752" selection-end="752" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="555">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="basicFragment.fs" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/shaders/basicFragment.fs">
+      <file leaf-file-name="RenderUtil.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/base/engine/RenderUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="294" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="basicVertex.vs" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/shaders/basicVertex.vs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="1" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="323">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="phongVertex" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/shaders/phongVertex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="1" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="323">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="phongFragment.fs" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/shaders/phongFragment.fs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="54" selection-start="867" selection-end="867" vertical-scroll-proportion="0.0" vertical-offset="82" max-vertical-offset="969">
+            <state line="36" column="10" selection-start="937" selection-end="937" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="720">
               <folding />
             </state>
           </provider>
@@ -129,43 +86,70 @@
       <file leaf-file-name="PhongShader.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/base/engine/PhongShader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="42" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="850">
+            <state line="41" column="62" selection-start="1336" selection-end="1336" vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="1770">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Game.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Transform.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/base/engine/Transform.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="27" selection-start="421" selection-end="421" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="1485">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Time.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/base/engine/Time.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="0" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Game.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/base/engine/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="54" selection-start="1346" selection-end="1346" vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="1377">
+            <state line="14" column="18" selection-start="249" selection-end="249" vertical-scroll-proportion="0.27888447" vertical-offset="0" max-vertical-offset="1245">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Mesh.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Mesh.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/base/engine/Mesh.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="74" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.2757437" vertical-offset="507" max-vertical-offset="1394">
+            <state line="83" column="8" selection-start="2386" selection-end="2386" vertical-scroll-proportion="0.0" vertical-offset="537" max-vertical-offset="3345">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Vertex.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/base/engine/Vertex.java">
+      <file leaf-file-name="Camera.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/base/engine/Camera.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="51" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="952">
+            <state line="27" column="30" selection-start="691" selection-end="691" vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="2100">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Util.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/base/engine/Util.java">
+      <file leaf-file-name="Texture.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/base/engine/Texture.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="44" selection-start="1278" selection-end="1278" vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="1462">
+            <state line="21" column="35" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="870">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResourceLoader.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/base/engine/ResourceLoader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="120" column="7" selection-start="3861" selection-end="3861" vertical-scroll-proportion="0.0" vertical-offset="1800" max-vertical-offset="1920">
               <folding />
             </state>
           </provider>
@@ -182,37 +166,40 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/MainComponent.java" />
-        <option value="$PROJECT_DIR$/src/com/base/engine/Time.java" />
-        <option value="$PROJECT_DIR$/src/com/base/engine/Quaternion.java" />
         <option value="$PROJECT_DIR$/src/com/base/engine/Transform.java" />
-        <option value="$PROJECT_DIR$/src/com/base/engine/MainComponent.java" />
-        <option value="$PROJECT_DIR$/src/com/base/engine/Texture.java" />
-        <option value="$PROJECT_DIR$/src/com/base/engine/RecourceLoader.java" />
-        <option value="$PROJECT_DIR$/src/com/base/engine/Window.java" />
         <option value="$PROJECT_DIR$/res/shaders/basicVertex.vs" />
         <option value="$PROJECT_DIR$/src/com/base/engine/Vector3f.java" />
         <option value="$PROJECT_DIR$/src/com/base/engine/Vector2f.java" />
-        <option value="$PROJECT_DIR$/src/com/base/engine/Camera.java" />
-        <option value="$PROJECT_DIR$/src/com/base/engine/Matrix4f.java" />
         <option value="$PROJECT_DIR$/src/com/base/engine/Input.java" />
         <option value="$PROJECT_DIR$/src/com/base/engine/Material.java" />
-        <option value="$PROJECT_DIR$/src/com/base/engine/Shader.java" />
-        <option value="$PROJECT_DIR$/src/com/base/engine/RenderUtil.java" />
         <option value="$PROJECT_DIR$/src/com/base/engine/Basicshader.java" />
         <option value="$PROJECT_DIR$/res/shaders/phongVertex" />
-        <option value="$PROJECT_DIR$/res/shaders/basicFragment.fs" />
-        <option value="$PROJECT_DIR$/src/com/base/engine/Game.java" />
         <option value="$PROJECT_DIR$/src/com/base/engine/PhongShader.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/Shader.java" />
         <option value="$PROJECT_DIR$/res/shaders/phongFragment.fs" />
-        <option value="$PROJECT_DIR$/src/com/base/engine/Vertex.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/BasicShader.java" />
+        <option value="$PROJECT_DIR$/res/shaders/basicFragment.fs" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/RecourceLoader.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/RenderUtil.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/Texture.java" />
         <option value="$PROJECT_DIR$/src/com/base/engine/Util.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/Vertex.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/Window.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/Time.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/MainComponent.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/Camera.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/Matrix4f.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/Quaternion.java" />
         <option value="$PROJECT_DIR$/src/com/base/engine/Mesh.java" />
+        <option value="$PROJECT_DIR$/src/com/base/engine/Game.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="960" />
-    <option name="height" value="1040" />
+    <option name="x" value="1083" />
+    <option name="y" value="22" />
+    <option name="width" value="1446" />
+    <option name="height" value="1320" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -240,6 +227,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -250,38 +238,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="External Libraries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="slick" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3DGameEngineMalik" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lwjgl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="3DGameEngineMalik" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.7 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -348,9 +304,26 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3DGameEngineMalik" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="3DGameEngineMalik" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -362,15 +335,21 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="C:/Program Files (x86)/Java/Slick Util/slick-util.jar!/" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="/lib/Java/lwjgl-2.9.1/jar/lwjgl.jar!/" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="dynamic.classpath" value="false" />
     <property name="FullScreen" value="false" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/models" />
+      <recent name="$PROJECT_DIR$/res/textures" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.MainMac">
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="com.base.engine.MainComponent" />
@@ -489,8 +468,32 @@
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Application.Main" />
+    <configuration default="false" name="MainMac" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="com.base.engine.MainComponent" />
+      <option name="VM_PARAMETERS" value="-Djava.library.path=&quot;/lib/Java/lwjgl-2.9.1/native/macosx/&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="3DGameEngineMalik" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Application.MainMac" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -508,8 +511,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="960" height="1040" extended-state="0" />
-    <editor active="false" />
+    <frame x="1083" y="22" width="1446" height="1320" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -517,23 +520,23 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39983714" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31270358" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28072035" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34582442" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17450142" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34527686" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31263384" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980457" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -552,17 +555,17 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31263384" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28072035" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34582442" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USERS">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
     </option>
   </component>
@@ -582,10 +585,30 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Vertex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="51" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="840">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="44" selection-start="1278" selection-end="1278" vertical-scroll-proportion="0.0" vertical-offset="570" max-vertical-offset="1290">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1792#1800#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/base/engine/Matrix4f.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="5" selection-start="516" selection-end="516" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="935">
-          <folding />
+          <folding>
+            <element signature="e#4605#4606#0" expanded="true" />
+            <element signature="e#4631#4632#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -626,23 +649,17 @@
     <entry file="file://$PROJECT_DIR$/src/com/base/engine/Vector3f.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="33" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="1598">
-          <folding>
-            <element signature="e#2389#2390#0" expanded="true" />
-            <element signature="e#2413#2414#0" expanded="true" />
-            <element signature="e#2446#2447#0" expanded="true" />
-            <element signature="e#2472#2473#0" expanded="true" />
-            <element signature="e#2499#2500#0" expanded="true" />
-            <element signature="e#2523#2524#0" expanded="true" />
-            <element signature="e#2556#2557#0" expanded="true" />
-            <element signature="e#2582#2583#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/base/engine/Matrix4f.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="5" selection-start="516" selection-end="516" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="935">
-          <folding />
+          <folding>
+            <element signature="e#4605#4606#0" expanded="true" />
+            <element signature="e#4631#4632#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -728,82 +745,6 @@
         <state line="24" column="32" selection-start="593" selection-end="594" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="782" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../IntelliJ IDEA/3DEngine/src/com/base/MainComp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="18" selection-end="50" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../IntelliJ IDEA/3DEngine/src/com/base/Window.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="929" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Time.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="33" selection-start="241" selection-end="241" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Quaternion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="62" selection-start="1254" selection-end="1254" vertical-scroll-proportion="0.47577092" vertical-offset="299" max-vertical-offset="1207" />
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_40/src.zip!/java/io/FileInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="0" selection-start="2882" selection-end="2882" vertical-scroll-proportion="0.0" vertical-offset="1074" max-vertical-offset="7191" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Transform.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="29" selection-start="608" selection-end="608" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="1377">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Texture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="5" selection-start="206" selection-end="206" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/RecourceLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="55" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="2210">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Window.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="5" selection-start="1218" selection-end="1218" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1139">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Vector3f.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="0" selection-start="1382" selection-end="1382" vertical-scroll-proportion="0.0" vertical-offset="260" max-vertical-offset="1751">
-          <folding>
-            <element signature="e#2389#2390#0" expanded="true" />
-            <element signature="e#2413#2414#0" expanded="true" />
-            <element signature="e#2446#2447#0" expanded="true" />
-            <element signature="e#2472#2473#0" expanded="true" />
-            <element signature="e#2499#2500#0" expanded="true" />
-            <element signature="e#2523#2524#0" expanded="true" />
-            <element signature="e#2556#2557#0" expanded="true" />
-            <element signature="e#2582#2583#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Matrix4f.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="125" column="34" selection-start="5163" selection-end="5163" vertical-scroll-proportion="0.0" vertical-offset="1398" max-vertical-offset="2414">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/base/engine/Vector2f.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="54" selection-start="591" selection-end="591" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1241">
@@ -818,116 +759,168 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/MainComponent.java">
+    <entry file="jar:///lib/Java/slick-util/slick-util.jar!/org/newdawn/slick/opengl/PNGDecoder.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="26" selection-start="481" selection-end="481" vertical-scroll-proportion="0.280837" vertical-offset="51" max-vertical-offset="2091">
-          <folding />
-        </state>
+        <state line="128" column="0" selection-start="5575" selection-end="5575" vertical-scroll-proportion="-27.44" vertical-offset="1219" max-vertical-offset="1995" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/shaders/basicVertex.vs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="1" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/shaders/phongVertex.vs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="753" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/base/engine/Material.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="216" selection-end="216" vertical-scroll-proportion="0.19165727" vertical-offset="0" max-vertical-offset="887">
-          <folding>
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-            <element signature="e#379#380#0" expanded="true" />
-            <element signature="e#417#418#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#479#480#0" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#557#558#0" expanded="true" />
-          </folding>
+        <state line="12" column="20" selection-start="270" selection-end="277" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/base/engine/Shader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="96" selection-start="727" selection-end="727" vertical-scroll-proportion="0.0" vertical-offset="142" max-vertical-offset="1853">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/RenderUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="40" selection-start="548" selection-end="548" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Camera.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="806" selection-end="806" vertical-scroll-proportion="0.3988827" vertical-offset="153" max-vertical-offset="2142">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Basicshader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="1" selection-start="150" selection-end="917" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/shaders/phongVertex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="1" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/shaders/basicVertex.vs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="1" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/shaders/basicFragment.fs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="294" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/PhongShader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="42" selection-start="217" selection-end="217" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748">
+        <state line="37" column="0" selection-start="972" selection-end="972" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="1620">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/shaders/phongFragment.fs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="54" selection-start="867" selection-end="867" vertical-scroll-proportion="0.0" vertical-offset="82" max-vertical-offset="969">
+        <state line="110" column="48" selection-start="2577" selection-end="2577" vertical-scroll-proportion="0.8560461" vertical-offset="758" max-vertical-offset="1800">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Game.java">
+    <entry file="file://$PROJECT_DIR$/res/shaders/basicFragment.fs">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="54" selection-start="1346" selection-end="1346" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1360">
+        <state line="12" column="29" selection-start="200" selection-end="200" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/ResourceLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="7" selection-start="3861" selection-end="3861" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1845">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/base/engine/Vertex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="51" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
+        <state line="44" column="5" selection-start="916" selection-end="916" vertical-scroll-proportion="0.67729086" vertical-offset="0" max-vertical-offset="753">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/base/engine/Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="44" selection-start="1278" selection-end="1278" vertical-scroll-proportion="0.0" vertical-offset="269" max-vertical-offset="1394">
+        <state line="41" column="26" selection-start="1052" selection-end="1052" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1425">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1792#1800#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Texture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="35" selection-start="387" selection-end="387" vertical-scroll-proportion="0.0" vertical-offset="12" max-vertical-offset="840">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="5" selection-start="1292" selection-end="1292" vertical-scroll-proportion="0.7808765" vertical-offset="57" max-vertical-offset="1125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Time.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/BasicShader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="20" selection-start="752" selection-end="752" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/RenderUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="10" selection-start="937" selection-end="937" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/PhongShader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="62" selection-start="1336" selection-end="1336" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="1650">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Transform.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="27" selection-start="421" selection-end="421" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1215">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Matrix4f.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="5" selection-start="2348" selection-end="2348" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="2325">
+          <folding>
+            <element signature="e#4605#4606#0" expanded="true" />
+            <element signature="e#4631#4632#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Camera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="30" selection-start="691" selection-end="691" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="1920">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Vector3f.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="54" selection-start="884" selection-end="884" vertical-scroll-proportion="0.30278885" vertical-offset="282" max-vertical-offset="1425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/MainComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="41" selection-start="1455" selection-end="1455" vertical-scroll-proportion="1.2948207" vertical-offset="0" max-vertical-offset="1830">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Quaternion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="5" selection-start="1604" selection-end="1604" vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="1065">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/base/engine/Mesh.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="74" selection-start="1320" selection-end="1320" vertical-scroll-proportion="0.2757437" vertical-offset="507" max-vertical-offset="1394">
+        <state line="83" column="8" selection-start="2386" selection-end="2386" vertical-scroll-proportion="0.0" vertical-offset="537" max-vertical-offset="3345">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/base/engine/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="18" selection-start="249" selection-end="249" vertical-scroll-proportion="0.27888447" vertical-offset="0" max-vertical-offset="1245">
           <folding />
         </state>
       </provider>
@@ -989,7 +982,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -997,7 +989,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>slick</last-edited>
+          <last-edited>lwjgl</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

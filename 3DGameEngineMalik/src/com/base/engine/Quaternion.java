@@ -17,7 +17,7 @@ public class Quaternion {
         this.w = w;
     }
     public float length(){
-        return (float)Math.sqrt(x*x + y*y + z*z + w*w);
+        return (float)Math.sqrt(x * x + y * y + z * z + w * w);
     }
     public Quaternion normalize(){
         float length = length();
@@ -30,13 +30,13 @@ public class Quaternion {
         return this;
     }
     public Quaternion conjugete(){
-        return new Quaternion(-x, -y, -z, -w);
+        return new Quaternion(-x, -y, -z, w);
     }
     public Quaternion mul(Quaternion r){
         float w_ = w * r.getW() - x * r.getX() - y * r.getY() - z * r.getZ();
-        float x_ = x * r.getW() + w * r.getX() - z * r.getY() + y * r.getZ();
-        float y_ = y * r.getW() + z * r.getX() - w * r.getY() - x * r.getZ();
-        float z_ = z * r.getW() - y * r.getX() + x * r.getY() + w * r.getZ();
+        float x_ = x * r.getW() + w * r.getX() + y * r.getZ() - z * r.getY();
+        float y_ = y * r.getW() + w * r.getY() + z * r.getX() - x * r.getZ();
+        float z_ = z * r.getW() + w * r.getZ() + x * r.getY() - y * r.getX();
         return new Quaternion(x_, y_, z_, w_);
     }
     public  Quaternion mul(Vector3f r){
