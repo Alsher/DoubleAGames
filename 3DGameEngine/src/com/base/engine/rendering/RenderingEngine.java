@@ -35,7 +35,6 @@ public class RenderingEngine {
         ambientLight = new Vector3f(0.1f, 0.1f, 0.1f);
     }
 
-
     public void input(float delta)
     {
         mainCamera.input(delta);
@@ -62,9 +61,7 @@ public class RenderingEngine {
         for(BaseLight light : lights)
         {
             light.getShader().setRenderingEngine(this);
-
             activeLight = light;
-
             object.render(light.getShader());
         }
 

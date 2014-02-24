@@ -1,6 +1,5 @@
 package com.base.engine.components;
 
-import com.base.engine.core.Transform;
 import com.base.engine.rendering.Material;
 import com.base.engine.rendering.Mesh;
 import com.base.engine.rendering.Shader;
@@ -16,10 +15,11 @@ public class MeshRenderer extends GameComponent
         this.material = material;
     }
 
-    public void render(Transform transform, Shader shader)
+    @Override
+    public void render(Shader shader)
     {
         shader.bind();
-        shader.updateUniforms(transform, material);
+        shader.updateUniforms(getTransform(), material);
         mesh.draw();
     }
 

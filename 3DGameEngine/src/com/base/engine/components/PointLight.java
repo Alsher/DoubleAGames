@@ -5,71 +5,46 @@ import com.base.engine.rendering.ForwardPoint;
 
 public class PointLight extends BaseLight
 {
-	private BaseLight baseLight;
+    private static final int COLOR_DEPTH = 256;
 
-
-
-    private float constant;
-    private float linear;
-    private float exponent;
-
-
-
-    private Vector3f position;
+    private Vector3f attenuation;
 	private float range;
 	
-	public PointLight(Vector3f color, float intensity, float constant, float linear, float exponent, Vector3f position, float range)
+	public PointLight(Vector3f color, float intensity, Vector3f attenuation)
 	{
         super(color, intensity);
 
-        this.constant = constant;
-        this.linear = linear;
-        this.exponent = exponent;
+        this.attenuation = attenuation;
 
-		this.position = position;
-		this.range = range;
+        float a = attenuation.getZ();
+        float b = attenuation.getY();
+        float c = attenuation.getX() - COLOR_DEPTH * getIntensity() * getColor().max();
 
+		this.range = (float)((-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a));
+        System.out.println(range);
         setShader(ForwardPoint.getInstance());
-	}
-	
-	public BaseLight getBaseLight()
-	{
-		return baseLight;
-	}
-	public void setBaseLight(BaseLight baseLight)
-	{
-		this.baseLight = baseLight;
 	}
 
     public float getConstant() {
-        return constant;
+        return attenuation.getX();
     }
     public void setConstant(float constant) {
-        this.constant = constant;
+        attenuation.setX(constant);
     }
 
     public float getExponent() {
-        return exponent;
+        return attenuation.getY();
     }
     public void setExponent(float exponent) {
-        this.exponent = exponent;
+        attenuation.setY(exponent);
     }
 
     public float getLinear() {
-        return linear;
+        return attenuation.getZ();
     }
     public void setLinear(float linear) {
-        this.linear = linear;
+        attenuation.setZ(linear);
     }
-
-    public Vector3f getPosition()
-	{
-		return position;
-	}
-	public void setPosition(Vector3f position)
-	{
-		this.position = position;
-	}
 
 	public float getRange()
 	{

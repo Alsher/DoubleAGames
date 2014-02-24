@@ -32,13 +32,13 @@ public class ForwardPoint extends Shader
         addUniform("eyePos");
 
 
-            addUniform("pointLight.base.color");
-            addUniform("pointLight.base.intensity");
-            addUniform("pointLight.atten.constant");
-            addUniform("pointLight.atten.linear");
-            addUniform("pointLight.atten.exponent");
-            addUniform("pointLight.position");
-            addUniform("pointLight.range");
+        addUniform("pointLight.base.color");
+        addUniform("pointLight.base.intensity");
+        addUniform("pointLight.atten.constant");
+        addUniform("pointLight.atten.linear");
+        addUniform("pointLight.atten.exponent");
+        addUniform("pointLight.position");
+        addUniform("pointLight.range");
 
     }
 
@@ -48,8 +48,8 @@ public class ForwardPoint extends Shader
         Matrix4f projectedMatrix = getRenderingEngine().getMainCamera().getViewProjection().mul(worldMatrix);
         material.getTexture().bind();
 
-        setUniform("MVP", projectedMatrix);
         setUniform("model", worldMatrix);
+        setUniform("MVP", projectedMatrix);
 
         setUniformf("specularIntensity", material.getSpecularIntensity());
         setUniformf("specularPower", material.getSpecularPower());
@@ -70,7 +70,7 @@ public class ForwardPoint extends Shader
         setUniformf(uniformName + ".atten.constant", pointLight.getConstant());
         setUniformf(uniformName + ".atten.linear", pointLight.getLinear());
         setUniformf(uniformName + ".atten.exponent", pointLight.getExponent());
-        setUniform(uniformName + ".position", pointLight.getPosition());
+        setUniform(uniformName + ".position", pointLight.getTransform().getPos());
         setUniformf(uniformName + ".range", pointLight.getRange());
     }
 }

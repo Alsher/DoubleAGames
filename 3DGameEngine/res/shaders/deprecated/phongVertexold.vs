@@ -8,14 +8,14 @@ out vec2 texCoord0;
 out vec3 normal0;
 out vec3 worldPos0;
 
+uniform mat4 transform;
+uniform mat4 transformProjected;
 
-uniform mat4 model;
-uniform mat4 MVP;
 
 void main()
 {
-    gl_Position = MVP * vec4(position, 1.0);
+    gl_Position = transformProjected * vec4(position, 1.0);
     texCoord0 = texCoord;
-    normal0 = (model * vec4(normal, 0.0)).xyz;
-    worldPos0 = (model * vec4(position, 1.0)).xyz;
+    normal0 = (transform * vec4(normal, 0.0)).xyz;
+    worldPos0 = (transform * vec4(position, 1.0)).xyz;
 }

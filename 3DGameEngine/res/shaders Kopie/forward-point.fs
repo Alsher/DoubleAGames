@@ -27,21 +27,13 @@ struct PointLight
     float range;
 };
 
-struct SpotLight
-{
-    PointLight pointLight;
-    vec3 direction;
-    float cutoff;
-};
-
-
 uniform vec3 eyePos;
 uniform sampler2D diffuse;
 
 uniform float specularIntensity;
 uniform float specularPower;
 
-uniform SpotLight spotLight;
+uniform PointLight pointLight;
 
 vec4 calcLight(BaseLight base, vec3 direction, vec3 normal)
 {
@@ -85,27 +77,11 @@ vec4 calcPointLight(PointLight pointLight, vec3 normal)
                          pointLight.atten.linear * distanceToPoint +
                          pointLight.atten.exponent * distanceToPoint * distanceToPoint +
                          0.0001;
-                         
+    
     return color / attenuation;
-}
-
-vec4 calcSpotLight(SpotLight spotLight, vec3 normal)
-{
-    vec3 lightDirection = normalize(worldPos0 - spotLight.pointLight.position);
-    float spotFactor = dot(lightDirection, spotLight.direction);
-    
-    vec4 color = vec4(0,0,0,0);
-    
-    if(spotFactor > spotLight.cutoff)
-    {
-        color = calcPointLight(spotLight.pointLight, normal) *
-                (1.0 - (1.0 - spotFactor)/(1.0 - spotLight.cutoff));
-    }
-    
-    return color;
 }
 
 void main()
 {
-    fragColor = texture(diffuse, texCoord0.xy) * calcSpotLight(spotLight, normalize(normal0));
+    fragColor = texture(diffuse, texCoord0.xy) * calcPointLight(pointLight, normalize(normal0));
 }

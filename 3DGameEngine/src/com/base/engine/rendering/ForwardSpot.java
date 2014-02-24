@@ -23,15 +23,12 @@ public class ForwardSpot extends Shader
         addFragmentShaderFromFile("forward-spot.fs");
         compileShader();
 
-
-
         addUniform("MVP");
         addUniform("model");
 
         addUniform("specularIntensity");
         addUniform("specularPower");
         addUniform("eyePos");
-
 
         addUniform("spotLight.pointLight.base.color");
         addUniform("spotLight.pointLight.base.intensity");
@@ -50,8 +47,8 @@ public class ForwardSpot extends Shader
         Matrix4f projectedMatrix = getRenderingEngine().getMainCamera().getViewProjection().mul(worldMatrix);
         material.getTexture().bind();
 
-        setUniform("MVP", projectedMatrix);
         setUniform("model", worldMatrix);
+        setUniform("MVP", projectedMatrix);
 
         setUniformf("specularIntensity", material.getSpecularIntensity());
         setUniformf("specularPower", material.getSpecularPower());
@@ -72,7 +69,7 @@ public class ForwardSpot extends Shader
         setUniformf(uniformName + ".atten.constant", pointLight.getConstant());
         setUniformf(uniformName + ".atten.linear", pointLight.getLinear());
         setUniformf(uniformName + ".atten.exponent", pointLight.getExponent());
-        setUniform(uniformName + ".position", pointLight.getPosition());
+        setUniform(uniformName + ".position", pointLight.getTransform().getPos());
         setUniformf(uniformName + ".range", pointLight.getRange());
     }
 
