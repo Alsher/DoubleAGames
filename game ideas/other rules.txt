@@ -1,0 +1,14 @@
+# Rules for coding style
+
+1 always explain your code with „// < explanation >„ or with „/** < explanation > **/„ 
+2 System.out.println(); always starts with a capital letter
+3 an error is written "Error" and "error" (depending on the case)
+4 use proper gramma when naming variables
+5 name variables in a useful way
+6 disable code either with „//„ or with „/* */„
+7 ..
+8 ..
+9 ..
+
+
+	

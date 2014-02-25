@@ -23,7 +23,6 @@ public class Window
             Display.setTitle(title);
             Display.create(pixelFormat, contextAtrributes);
             Display.setVSyncEnabled(true);
-
             Keyboard.create();
             Mouse.create();
         }

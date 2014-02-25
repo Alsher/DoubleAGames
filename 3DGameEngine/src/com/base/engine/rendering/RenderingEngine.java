@@ -30,6 +30,7 @@ public class RenderingEngine {
 
         glEnable(GL_DEPTH_CLAMP);
 
+        System.out.println(glGetString(GL_VERSION));
         mainCamera = new Camera((float)Math.toRadians(70.0f), (float) Window.getWidth()/(float)Window.getHeight(), 0.01f, 1000.0f);
 
         ambientLight = new Vector3f(0.1f, 0.1f, 0.1f);
@@ -53,6 +54,7 @@ public class RenderingEngine {
         object.render(forwardAmbient);
 
         glEnable(GL_BLEND);
+
         /** Enable **/
         glBlendFunc(GL_ONE, GL_ONE); //existing * 1, new * 1
         glDepthMask(false); //disable writing to depth buffer
