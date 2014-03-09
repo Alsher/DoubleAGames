@@ -24,17 +24,22 @@ public class GameObject {
     public void addChild(GameObject child)
     {
         children.add(child);
+        child.getTransform().setParent(transform);
     }
 
-    public void addComponent(GameComponent component)
+    public GameObject addComponent(GameComponent component)
     {
         components.add(component);
         component.setParent(this);
+
+        return this;
     }
 
 
     public void input(float delta)
     {
+        transform.update();
+
         for(GameComponent component : components)
             component.input(delta);
 
