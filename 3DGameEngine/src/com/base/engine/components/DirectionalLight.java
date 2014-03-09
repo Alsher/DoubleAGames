@@ -7,9 +7,9 @@ public class DirectionalLight extends BaseLight
 {
 	public DirectionalLight(Vector3f color, float intensity)
 	{
-        super(color, intensity);
+		super(color, intensity);
 
-        setShader(ForwardDirectional.getInstance());
+		setShader(ForwardDirectional.getInstance());
 	}
 
 	public Vector3f getDirection()

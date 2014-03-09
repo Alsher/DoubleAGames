@@ -1,11 +1,12 @@
 package com.base.engine.rendering;
 
-import static org.lwjgl.opengl.GL11.*;
+import org.newdawn.slick.opengl.TextureLoader;
 
 import java.io.File;
 import java.io.FileInputStream;
 
-import org.newdawn.slick.opengl.TextureLoader;
+import static org.lwjgl.opengl.GL11.GL_TEXTURE_2D;
+import static org.lwjgl.opengl.GL11.glBindTexture;
 
 public class Texture
 {

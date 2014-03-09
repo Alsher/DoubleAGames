@@ -16,8 +16,8 @@ public class BasicShader extends Shader
 	{
 		super();
 		
-		addVertexShaderFromFile("basicVertex.vs");
-		addFragmentShaderFromFile("basicFragment.fs");
+		addVertexShaderFromFile("basicVertex120.vs");
+		addFragmentShaderFromFile("basicFragment120.fs");
 		compileShader();
 		
 		addUniform("transform");
@@ -26,11 +26,9 @@ public class BasicShader extends Shader
 	
 	public void updateUniforms(Transform transform, Material material)
 	{
-        Matrix4f worldMatrix = transform.getTransformation();
-        Matrix4f projectedMatrix = getRenderingEngine().getMainCamera().getViewProjection().mul(worldMatrix);
-
-
-        material.getTexture().bind();
+		Matrix4f worldMatrix = transform.getTransformation();
+		Matrix4f projectedMatrix = getRenderingEngine().getMainCamera().getViewProjection().mul(worldMatrix);
+		material.getTexture().bind();
 		
 		setUniform("transform", projectedMatrix);
 		setUniform("color", material.getColor());
