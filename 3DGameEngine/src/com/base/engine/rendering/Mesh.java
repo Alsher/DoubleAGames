@@ -2,6 +2,7 @@ package com.base.engine.rendering;
 
 import com.base.engine.core.Util;
 import com.base.engine.core.Vector3f;
+import com.base.engine.rendering.meshLoading.OBJModel;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL15;
@@ -145,6 +146,8 @@ public class Mesh { //storing  on graphics card of some data of some length
     {
         String[] splitArray = fileName.split("\\.");
         String ext = splitArray[splitArray.length -1];
+
+        OBJModel test = new OBJModel("./res/models/" + fileName);
 
         if(!ext.equals("obj"))
         {

@@ -34,38 +34,8 @@ public class RenderingEngine
 
 //		glEnable(GL_TEXTURE_2D);
 
-		//mainCamera = new Camera((float)Math.toRadians(70.0f), (float)Window.getWidth()/(float)Window.getHeight(), 0.01f, 1000.0f);
-
 		ambientLight = new Vector3f(0.1f, 0.1f, 0.1f);
-//		activeDirectionalLight = new DirectionalLight(new BaseLight(new Vector3f(0,0,1), 0.4f), new Vector3f(1,1,1));
-//		directionalLight2 = new DirectionalLight(new BaseLight(new Vector3f(1,0,0), 0.4f), new Vector3f(-1,1,-1));
-//
-//		int lightFieldWidth = 5;
-//		int lightFieldDepth = 5;
-//
-//		float lightFieldStartX = 0;
-//		float lightFieldStartY = 0;
-//		float lightFieldStepX = 7;
-//		float lightFieldStepY = 7;
-//
-//		pointLightList = new PointLight[lightFieldWidth * lightFieldDepth];
-//
-//		for(int i = 0; i < lightFieldWidth; i++)
-//		{
-//			for(int j = 0; j < lightFieldDepth; j++)
-//			{
-//				pointLightList[i * lightFieldWidth + j] = new PointLight(new BaseLight(new Vector3f(0,1,0), 0.4f),
-//						new Attenuation(0,0,1),
-//						new Vector3f(lightFieldStartX + lightFieldStepX * i,0,lightFieldStartY + lightFieldStepY * j), 100);
-//			}
-//		}
-//
-//		activePointLight = pointLightList[0];//new PointLight(new BaseLight(new Vector3f(0,1,0), 0.4f), new Attenuation(0,0,1), new Vector3f(5,0,5), 100);
-//
-//		spotLight = new SpotLight(new PointLight(new BaseLight(new Vector3f(0,1,1), 0.4f),
-//				new Attenuation(0,0,0.1f),
-//				new Vector3f(lightFieldStartX,0,lightFieldStartY), 100),
-//				new Vector3f(1,0,0), 0.7f);
+
 	}
 
 	public Vector3f getAmbientLight()
@@ -81,9 +51,8 @@ public class RenderingEngine
         object.addToRenderingEngine(this);
 
         Shader forwardAmbient = ForwardAmbient.getInstance();
-        forwardAmbient.setRenderingEngine(this);
 
-        object.render(forwardAmbient);
+        object.render(forwardAmbient, this);
 
         glEnable(GL_BLEND);
 
@@ -94,9 +63,8 @@ public class RenderingEngine
 
         for(BaseLight light : lights)
         {
-            light.getShader().setRenderingEngine(this);
             activeLight = light;
-            object.render(light.getShader());
+            object.render(light.getShader(), this);
         }
 
         /** Disable **/
