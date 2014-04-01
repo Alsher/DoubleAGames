@@ -1,11 +1,12 @@
 package com.base.engine.core;
 
+import com.base.engine.rendering.Vertex;
+import org.lwjgl.BufferUtils;
+
+import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.ArrayList;
-
-import com.base.engine.rendering.Vertex;
-import org.lwjgl.BufferUtils;
 
 public class Util
 {
@@ -18,8 +19,14 @@ public class Util
 	{
 		return BufferUtils.createIntBuffer(size);
 	}
-	
-	public static IntBuffer createFlippedBuffer(int... values)
+
+    public static ByteBuffer createByteBuffer(int size)
+    {
+        return BufferUtils.createByteBuffer(size);
+    }
+
+
+    public static IntBuffer createFlippedBuffer(int... values)
 	{
 		IntBuffer buffer = createIntBuffer(values.length);
 		buffer.put(values);

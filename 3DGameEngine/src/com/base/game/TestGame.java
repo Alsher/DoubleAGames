@@ -30,10 +30,15 @@ public class TestGame extends Game
 		Mesh mesh2 = new Mesh(vertices2, indices2, true);
 
 		Mesh mesh = new Mesh(vertices, indices, true);
-		Material material = new Material();//new Texture("blank.png"), new Vector3f(1,1,1), 1, 8);
+		Material material = new Material();
         material.addTexture("diffuse", new Texture("test.png"));
         material.addFloat("specularIntensity", 1);
         material.addFloat("specularPower", 8);
+
+        Material material2 = new Material();
+        material2.addTexture("diffuse", new Texture("bricks.jpg"));
+        material2.addFloat("specularIntensity", 1);
+        material2.addFloat("specularPower", 8);
 
         Mesh tempMesh = new Mesh("monkey.obj");
 
@@ -60,15 +65,16 @@ public class TestGame extends Game
 		spotLightObject.getTransform().getPos().set(5, 0, 5);
 		spotLightObject.getTransform().setRot(new Quaternion(new Vector3f(0,1,0), (float)Math.toRadians(90.0f)));
 
+
+
         addObject(planeObject);
         addObject(directionalLightObject);
         addObject(pointLightObject);
         addObject(spotLightObject);
 
-		//getRootObject().addChild(new GameObject().addComponent(new Camera((float)Math.toRadians(70.0f), (float)Window.getWidth()/(float)Window.getHeight(), 0.01f, 1000.0f)));
-
 		GameObject testMesh1 = new GameObject().addComponent(new MeshRenderer(mesh2, material));
 		GameObject testMesh2 = new GameObject().addComponent(new MeshRenderer(mesh2, material));
+        GameObject testMesh3 = new GameObject().addComponent(new MeshRenderer(tempMesh, material));
 
 		testMesh1.getTransform().getPos().set(0, 2, 0);
 		testMesh1.getTransform().setRot(new Quaternion(new Vector3f(0,1,0), 0.4f));
@@ -81,6 +87,12 @@ public class TestGame extends Game
 						.addChild(new GameObject().addComponent(new Camera((float)Math.toRadians(70.0f), (float)Window.getWidth()/(float)Window.getHeight(), 0.01f, 1000.0f)));
 
 		addObject(testMesh1);
+        addObject(testMesh3);
+
+        testMesh3.getTransform().getPos().set(5, 5, 5);
+        testMesh3.getTransform().setRot(new Quaternion(new Vector3f(0, 1, 0), (float)Math.toRadians(-70.0f)));
+
+        addObject(new GameObject().addComponent(new MeshRenderer(new Mesh("monkey.obj"), material2)));
 
 		directionalLight.getTransform().setRot(new Quaternion(new Vector3f(1,0,0), (float)Math.toRadians(-45)));
 	}

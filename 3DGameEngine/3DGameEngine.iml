@@ -19,15 +19,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="module-library">
-      <library name="slick-util.jar">
-        <CLASSES>
-          <root url="jar:///lib/Java/slick-util/slick-util.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="lwjgl_util.jar">
         <CLASSES>
           <root url="jar:///lib/Java/lwjgl-2.9.1/jar/lwjgl_util.jar!/" />

@@ -2,15 +2,16 @@ package com.base.engine.rendering;
 
 import com.base.engine.core.Util;
 import com.base.engine.core.Vector3f;
+import com.base.engine.rendering.meshLoading.IndexedModel;
 import com.base.engine.rendering.meshLoading.OBJModel;
+import com.base.engine.rendering.resourceManagement.MeshResource;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL15;
 import org.lwjgl.util.glu.GLU;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.opengl.GL15.*;
@@ -21,17 +22,25 @@ import static org.lwjgl.opengl.GL30.glGenVertexArrays;
 
 public class Mesh { //storing  on graphics card of some data of some length
 
-    private int vaoId;
-    private int vboId;
-
-    private int size;
-
-    private int iboId; //index buffer object
+    private static HashMap<String, MeshResource> loadedModels = new HashMap<>();
+    private MeshResource resource;
+    private String fileName;
 
     public Mesh(String fileName)
     {
-        initMeshData();
-        loadMesh(fileName);
+        this.fileName = fileName;
+        MeshResource oldResource = loadedModels.get(fileName);
+
+        if(oldResource != null)
+        {
+            resource = oldResource;
+            resource.addReference();
+        }
+        else
+        {
+            loadMesh(fileName);
+            loadedModels.put(fileName, resource);
+        }
     }
 
     public Mesh(Vertex[] vertices, int[] indices)
@@ -41,36 +50,34 @@ public class Mesh { //storing  on graphics card of some data of some length
 
     public Mesh(Vertex[] vertices, int[] indices, boolean calcNormals)
     {
-        initMeshData();
+        fileName = "";
         addVertices(vertices, indices, calcNormals);
     }
 
-    private void initMeshData()
+    @Override
+    protected void finalize()
     {
-        iboId = glGenBuffers();
-        vboId = glGenBuffers();
-        size = 0;
+        if(resource.removeReference() && !fileName.isEmpty())
+            loadedModels.remove(fileName);
+
     }
 
     private void addVertices(Vertex[] vertices, int[] indices, boolean calcNormals)
     {
         if(calcNormals)
-        {
             calcNormals(vertices, indices);
-        }
 
-        size = indices.length;
+        resource = new MeshResource(indices.length, glGenVertexArrays());
 
         //new Vertex Array Object (VAO) in memory and selected (bound)
-        vaoId = glGenVertexArrays();
-        glBindVertexArray(vaoId);
+        glBindVertexArray(resource.getVao());
 
         //new Vertex Buffer Object (VBO) in memory and selected (bound)
         //vboId = glGenBuffers();
-        glBindBuffer(GL_ARRAY_BUFFER, vboId);
+        glBindBuffer(GL_ARRAY_BUFFER, resource.getVbo());
         GL15.glBufferData(GL_ARRAY_BUFFER, Util.createFlippedBuffer(vertices), GL_STATIC_DRAW);
 
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, iboId);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, resource.getIbo());
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, Util.createFlippedBuffer(indices), GL_STATIC_DRAW);
 
         //put VBO in attributes list at index 0, texCoord at index 1 and normals at index 2
@@ -97,7 +104,7 @@ public class Mesh { //storing  on graphics card of some data of some length
         //GL13.glActiveTexture(GL13.GL_TEXTURE0);
         //glBindTexture(GL_TEXTURE_2D, ibo);
 
-        glBindVertexArray(vaoId);
+        glBindVertexArray(resource.getVao());
         glEnableVertexAttribArray(0);
         glEnableVertexAttribArray(1);
         glEnableVertexAttribArray(2);
@@ -105,8 +112,8 @@ public class Mesh { //storing  on graphics card of some data of some length
         //draw vertices
         //glDrawArrays(GL_TRIANGLES, 0, Vertex.SIZE);
 
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, iboId);
-        glDrawElements(GL_TRIANGLES, size, GL_UNSIGNED_INT, 0);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, resource.getIbo());
+        glDrawElements(GL_TRIANGLES, resource.getSize(), GL_UNSIGNED_INT, 0);
 
         //deselect (bind to 0) everything
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
@@ -147,8 +154,6 @@ public class Mesh { //storing  on graphics card of some data of some length
         String[] splitArray = fileName.split("\\.");
         String ext = splitArray[splitArray.length -1];
 
-        OBJModel test = new OBJModel("./res/models/" + fileName);
-
         if(!ext.equals("obj"))
         {
             System.err.println("Error: File Format not supported for mesh data: " + ext);
@@ -156,61 +161,26 @@ public class Mesh { //storing  on graphics card of some data of some length
             System.exit(-1);
         }
 
+        OBJModel test = new OBJModel("./res/models/" + fileName);
+        IndexedModel model = test.toIndexedModel();
+        model.calcNormals();
+
         ArrayList<Vertex> vertices = new ArrayList<>();
-        ArrayList<Integer> indices = new ArrayList<>();
 
-        BufferedReader meshReader = null;
-
-        try
+        for(int i = 0; i < model.getPositions().size(); i++)
         {
-            meshReader = new BufferedReader(new FileReader("./res/models/" + fileName));
-            String line;
-
-            while((line = meshReader.readLine()) != null)
-            {
-                String[] tokens = line.split(" ");
-                tokens = Util.removeEmptyStrings(tokens);
-
-                if(tokens.length == 0 || tokens[0].equals("#"))
-                    continue;
-                else if(tokens[0].equals("v"))
-                {
-                    vertices.add(new Vertex(new Vector3f(Float.valueOf(tokens[1]),
-                            Float.valueOf(tokens[2]),
-                            Float.valueOf(tokens[3]))));
-                }
-                else if(tokens[0].equals("f"))
-                {
-                    indices.add(Integer.parseInt(tokens[1].split("/")[0]) - 1);
-                    indices.add(Integer.parseInt(tokens[2].split("/")[0]) - 1);
-                    indices.add(Integer.parseInt(tokens[3].split("/")[0]) - 1);
-
-                    if(tokens.length > 4)
-                    {
-                        indices.add(Integer.parseInt(tokens[1].split("/")[0]) - 1);
-                        indices.add(Integer.parseInt(tokens[3].split("/")[0]) - 1);
-                        indices.add(Integer.parseInt(tokens[4].split("/")[0]) - 1);
-                    }
-                }
-            }
-
-            meshReader.close();
-
-            Vertex[] vertexData = new Vertex[vertices.size()];
-            vertices.toArray(vertexData);
-
-            Integer[] indexData = new Integer[indices.size()];
-            indices.toArray(indexData);
-
-            addVertices(vertexData, Util.toIntArray(indexData), true);
-
-
+            vertices.add(new Vertex(model.getPositions().get(i),
+                                    model.getTexCoords().get(i),
+                                    model.getNormals().get(i)));
         }
-        catch(Exception e)
-        {
-            e.printStackTrace();
-            System.exit(1);
-        }
+
+        Vertex[] vertexData = new Vertex[vertices.size()];
+        vertices.toArray(vertexData);
+
+        Integer[] indexData = new Integer[model.getIndices().size()];
+        model.getIndices().toArray(indexData);
+
+        addVertices(vertexData, Util.toIntArray(indexData), false);
 
         return null;
     }

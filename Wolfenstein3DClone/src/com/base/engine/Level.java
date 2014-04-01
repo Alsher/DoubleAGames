@@ -24,7 +24,7 @@ public class Level {
 	
 	//WARNING: Temp variable!
 	//private Door door;
-    private Monster monster;
+    //private Monster monster;
 
 	
 	public Level(String levelName, String textureName, Player player)
@@ -41,7 +41,7 @@ public class Level {
 		Transform tempTransform = new Transform();
 		tempTransform.setTranslation(new Vector3f(8, 0, 8));
 
-        monster = new Monster(tempTransform);
+        //monster = new Monster(tempTransform);
 	}
 	
 	public void input()
@@ -60,7 +60,7 @@ public class Level {
 			door.update();
 		
 		player.update();
-        monster.update();
+        //monster.update();
 	}
 	
 	public void render()
@@ -72,7 +72,7 @@ public class Level {
 			door.render();
 		
 		player.render();
-        monster.render();
+        //monster.render();
 	}
 
     public void openDoors(Vector3f position)
