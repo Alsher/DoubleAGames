@@ -73,20 +73,14 @@ public class Mesh { //storing  on graphics card of some data of some length
         glBindVertexArray(resource.getVao());
 
         //new Vertex Buffer Object (VBO) in memory and selected (bound)
-        //vboId = glGenBuffers();
         glBindBuffer(GL_ARRAY_BUFFER, resource.getVbo());
         GL15.glBufferData(GL_ARRAY_BUFFER, Util.createFlippedBuffer(vertices), GL_STATIC_DRAW);
 
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, resource.getIbo());
         glBufferData(GL_ELEMENT_ARRAY_BUFFER, Util.createFlippedBuffer(indices), GL_STATIC_DRAW);
 
-        //put VBO in attributes list at index 0, texCoord at index 1 and normals at index 2
-        glVertexAttribPointer(0, 3, GL_FLOAT, false, Vertex.SIZE * 4, 0);
-        glVertexAttribPointer(1, 2, GL_FLOAT, false, Vertex.SIZE * 4, 12);
-        glVertexAttribPointer(2, 3, GL_FLOAT, false, Vertex.SIZE * 4, 20);
-
         //deselect (bind to 0) the VBO
-        glBindBuffer(GL_ARRAY_BUFFER, 0);
+        //glBindBuffer(GL_ARRAY_BUFFER, 0);
 
         //deselect (bind to o) the VAO
         glBindVertexArray(0);
@@ -94,32 +88,37 @@ public class Mesh { //storing  on graphics card of some data of some length
         this.exitOnGLError("Error in addVertices()");
     }
 
-
-
     public void draw()
     {
         //bind to VAO containing the info
-        //glClear(GL_COLOR_BUFFER_BIT);
-
-        //GL13.glActiveTexture(GL13.GL_TEXTURE0);
-        //glBindTexture(GL_TEXTURE_2D, ibo);
-
         glBindVertexArray(resource.getVao());
+
+        //enable the attribute arrays
         glEnableVertexAttribArray(0);
         glEnableVertexAttribArray(1);
         glEnableVertexAttribArray(2);
+        glEnableVertexAttribArray(3);
+
+        //put VBO in attributes list, vertices 0, texCoods 1, normals 2 and tangents 3
+        glBindBuffer(GL_ARRAY_BUFFER, resource.getVbo());
+        glVertexAttribPointer(0, 3, GL_FLOAT, false, Vertex.SIZE * 4, 0);
+        glVertexAttribPointer(1, 2, GL_FLOAT, false, Vertex.SIZE * 4, 12);
+        glVertexAttribPointer(2, 3, GL_FLOAT, false, Vertex.SIZE * 4, 20);
+        glVertexAttribPointer(3, 3, GL_FLOAT, false, Vertex.SIZE * 4, 32);
+        glVertexAttribPointer(3, 3, GL_FLOAT, false, Vertex.SIZE * 4, 44);
 
         //draw vertices
-        //glDrawArrays(GL_TRIANGLES, 0, Vertex.SIZE);
-
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, resource.getIbo());
         glDrawElements(GL_TRIANGLES, resource.getSize(), GL_UNSIGNED_INT, 0);
 
         //deselect (bind to 0) everything
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+
+        //disable the attribute arrays
         glDisableVertexAttribArray(0);
         glDisableVertexAttribArray(1);
         glDisableVertexAttribArray(2);
+        glDisableVertexAttribArray(3);
         glBindVertexArray(0);
 
         this.exitOnGLError("Error in draw()");
@@ -152,13 +151,13 @@ public class Mesh { //storing  on graphics card of some data of some length
     private Mesh loadMesh(String fileName)
     {
         String[] splitArray = fileName.split("\\.");
-        String ext = splitArray[splitArray.length -1];
+        String ext = splitArray[splitArray.length - 1];
 
         if(!ext.equals("obj"))
         {
-            System.err.println("Error: File Format not supported for mesh data: " + ext);
+            System.err.println("Error: '" + ext + "' file format not supported for mesh data.");
             new Exception().printStackTrace();
-            System.exit(-1);
+            System.exit(1);
         }
 
         OBJModel test = new OBJModel("./res/models/" + fileName);
@@ -170,8 +169,9 @@ public class Mesh { //storing  on graphics card of some data of some length
         for(int i = 0; i < model.getPositions().size(); i++)
         {
             vertices.add(new Vertex(model.getPositions().get(i),
-                                    model.getTexCoords().get(i),
-                                    model.getNormals().get(i)));
+                    model.getTexCoords().get(i),
+                    model.getNormals().get(i),
+                    model.getTangents().get(i)));
         }
 
         Vertex[] vertexData = new Vertex[vertices.size()];

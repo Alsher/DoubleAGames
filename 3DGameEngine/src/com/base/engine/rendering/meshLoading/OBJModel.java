@@ -10,15 +10,14 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class OBJModel {
-
+public class OBJModel
+{
     private ArrayList<Vector3f> positions;
     private ArrayList<Vector2f> texCoords;
     private ArrayList<Vector3f> normals;
     private ArrayList<OBJIndex> indices;
     private boolean hasTexCoords;
     private boolean hasNormals;
-
 
     public OBJModel(String fileName)
     {
@@ -45,20 +44,20 @@ public class OBJModel {
                     continue;
                 else if(tokens[0].equals("v"))
                 {
-                    positions.add(new Vector3f( Float.valueOf(tokens[1]),
-                                                Float.valueOf(tokens[2]),
-                                                Float.valueOf(tokens[3])));
+                    positions.add(new Vector3f(Float.valueOf(tokens[1]),
+                            Float.valueOf(tokens[2]),
+                            Float.valueOf(tokens[3])));
                 }
                 else if(tokens[0].equals("vt"))
                 {
-                    texCoords.add(new Vector2f( Float.valueOf(tokens[1]),
-                                                Float.valueOf(tokens[2])));
+                    texCoords.add(new Vector2f(Float.valueOf(tokens[1]),
+                            Float.valueOf(tokens[2])));
                 }
                 else if(tokens[0].equals("vn"))
                 {
-                    normals.add(new Vector3f(   Float.valueOf(tokens[1]),
-                                                Float.valueOf(tokens[2]),
-                                                Float.valueOf(tokens[3])));
+                    normals.add(new Vector3f(Float.valueOf(tokens[1]),
+                            Float.valueOf(tokens[2]),
+                            Float.valueOf(tokens[3])));
                 }
                 else if(tokens[0].equals("f"))
                 {
@@ -84,10 +83,9 @@ public class OBJModel {
     {
         IndexedModel result = new IndexedModel();
         IndexedModel normalModel = new IndexedModel();
-
-        HashMap<OBJIndex, Integer> resultIndexMap = new HashMap<>();
-        HashMap<Integer, Integer> normalIndexMap = new HashMap<>();
-        HashMap<Integer, Integer> indexMap = new HashMap<>();
+        HashMap<OBJIndex, Integer> resultIndexMap = new HashMap<OBJIndex, Integer>();
+        HashMap<Integer, Integer> normalIndexMap = new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> indexMap = new HashMap<Integer, Integer>();
 
         for(int i = 0; i < indices.size(); i++)
         {
@@ -100,25 +98,25 @@ public class OBJModel {
             if(hasTexCoords)
                 currentTexCoord = texCoords.get(currentIndex.texCoordIndex);
             else
-                currentTexCoord = new Vector2f(0, 0);
+                currentTexCoord = new Vector2f(0,0);
 
             if(hasNormals)
                 currentNormal = normals.get(currentIndex.normalIndex);
             else
-                currentNormal = new Vector3f(0, 0, 0);
+                currentNormal = new Vector3f(0,0,0);
 
             Integer modelVertexIndex = resultIndexMap.get(currentIndex);
 
             if(modelVertexIndex == null)
             {
                 modelVertexIndex = result.getPositions().size();
-                resultIndexMap.put(currentIndex, modelVertexIndex); //.size() is the same size as a counter
+                resultIndexMap.put(currentIndex, modelVertexIndex);
 
                 result.getPositions().add(currentPosition);
                 result.getTexCoords().add(currentTexCoord);
                 if(hasNormals)
                     result.getNormals().add(currentNormal);
-
+                result.getTangents().add(new Vector3f(0,0,0));
             }
 
             Integer normalModelIndex = normalIndexMap.get(currentIndex.vertexIndex);
@@ -126,11 +124,12 @@ public class OBJModel {
             if(normalModelIndex == null)
             {
                 normalModelIndex = normalModel.getPositions().size();
-                normalIndexMap.put(currentIndex.vertexIndex, normalModelIndex); //.size() is the same size as a counter
+                normalIndexMap.put(currentIndex.vertexIndex, normalModelIndex);
 
                 normalModel.getPositions().add(currentPosition);
                 normalModel.getTexCoords().add(currentTexCoord);
                 normalModel.getNormals().add(currentNormal);
+                normalModel.getTangents().add(new Vector3f(0,0,0));
             }
 
             result.getIndices().add(modelVertexIndex);
@@ -144,8 +143,12 @@ public class OBJModel {
 
             for(int i = 0; i < result.getPositions().size(); i++)
                 result.getNormals().add(normalModel.getNormals().get(indexMap.get(i)));
-                //result.getNormals().get(i).set(normalModel.getNormals().get(indexMap.get(i))); //set normals to resultModel
         }
+
+        normalModel.calcTangents();
+
+        for(int i = 0; i < result.getPositions().size(); i++)
+            result.getTangents().add(normalModel.getTangents().get(indexMap.get(i)));
 
         return result;
     }
@@ -157,11 +160,11 @@ public class OBJModel {
         OBJIndex result = new OBJIndex();
         result.vertexIndex = Integer.parseInt(values[0]) - 1;
 
-
         if(values.length > 1)
         {
             hasTexCoords = true;
             result.texCoordIndex = Integer.parseInt(values[1]) - 1;
+
             if(values.length > 2)
             {
                 hasNormals = true;
@@ -171,18 +174,4 @@ public class OBJModel {
 
         return result;
     }
-
-//    public ArrayList<Vector3f> getPositions() {
-//        return positions;
-//    }
-//    public ArrayList<Vector2f> getTexCoords() {
-//        return texCoords;
-//    }
-//    public ArrayList<Vector3f> getNormals() {
-//        return normals;
-//    }
-//    public ArrayList<OBJIndex> getIndices()
-//    {
-//        return indices;
-//    }
 }
